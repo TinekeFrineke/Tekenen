@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug Win32" />
+	<File name="Src\AirBrushing\AirbrushSizeWindow.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="363" topLine="0" />
+	</File>
+	<File name="Src\Button\ColourButton.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="302" topLine="3" />
+	</File>
+	<File name="Src\Custom\FontButtonBar.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="328" topLine="0" />
+	</File>
+	<File name="Src\General\SimpleMain.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="24" topLine="0" />
+	</File>
+	<File name="Src\General\Subject.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="24" topLine="0" />
+	</File>
+	<File name="Src\Smudging\SmudgingState.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="21099" topLine="714" />
+	</File>
+	<File name="Src\Stamping\StampSizeState.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="6134" topLine="204" />
+	</File>
+	<File name="Src\Stamping\StampState.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="256" topLine="0" />
+	</File>
+	<File name="Src\Stamping\StampSubState.h" open="0" top="0" tabpos="0">
+		<Cursor position="333" topLine="2" />
+	</File>
+	<File name="Src\Window\ColourWindow.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="124" topLine="0" />
+	</File>
+	<File name="Src\Window\DrawingWindow.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="479" topLine="0" />
+	</File>
+	<File name="Src\Window\MainWindow.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="1097" topLine="30" />
+	</File>
+	<File name="Src\Writing\LetterSizeWindow.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="212" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>

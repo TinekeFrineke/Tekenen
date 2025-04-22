@@ -1,0 +1,29 @@
+[FONTS]
+Absalom
+Alba
+Alba Super
+Andy
+Arial
+Baby Kruffy
+Bauhaus 93
+BeeskneesITC
+Bickley Script
+Braggadocio
+Chick
+Cooper Black
+Copperplate
+Curls MT
+Frosty
+Gigi
+HERMAN
+Imprint MT Shadow
+Jokerman
+Jokewood
+MATTEROFFACT
+Papyrus
+Porky's
+Times New Roman
+Webdings
+Wingdings
+Wingdings 2
+Wingdings 3

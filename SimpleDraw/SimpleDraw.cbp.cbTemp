@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="SimpleDraw" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option output="Output\Debug\SimpleDraw" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Output\Debug" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-O0" />
+					<Add option="-DWIN32" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-DUNICODE" />
+					<Add option="-D_UNICODE" />
+					<Add option="-DPRINT_MESSAGES=0" />
+					<Add option="-DWINVER=0x0601" />
+					<Add option="-D_CRT_SECURE_NO_WARNINGS" />
+					<Add option="-D_CRT_NON_CONFORMING_SWPRINTFS" />
+					<Add directory="E:\Projects\CodeBlocks\Tekenen\MijnWindows\Source" />
+					<Add directory="E:\Projects\CodeBlocks\Tekenen\SimpleDraw\src" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="X:\Tekenen\MijnWindows\Source" />
+					<Add directory="E:\Projects\CodeBlocks\Tekenen\SimpleDraw\src" />
+				</ResourceCompiler>
+				<Linker>
+					<Add library="..\MijnWindows\Output\Debug\libMijnWindows.a" />
+					<Add library="Msimg32" />
+					<Add directory="C:\Projects\msvc\Tekenen\MijnWindows\Output\Debug" />
+				</Linker>
+			</Target>
+			<Target title="Release Win32">
+				<Option output="Output\Release\SimpleDraw" prefix_auto="1" extension_auto="1" />
+				<Option object_output="Output\Release" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-W" />
+					<Add option="-DWIN32" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-DUNICODE" />
+					<Add option="-D_UNICODE" />
+					<Add option="-DWINVER=0x0601" />
+					<Add directory="E:\Projects\CodeBlocks\Tekenen\MijnWindows\Source" />
+					<Add directory="E:\Projects\CodeBlocks\Tekenen\SimpleDraw\src" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="X:\Tekenen\MijnWindows\Source" />
+					<Add directory="E:\Projects\CodeBlocks\Tekenen\SimpleDraw\src" />
+				</ResourceCompiler>
+				<Linker>
+					<Add library="MijnWindows" />
+					<Add library="Msimg32" />
+					<Add directory="C:\Projects\msvc\Tekenen\MijnWindows\Output\Release" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="SimpleDraw.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="Src\AirBrushing\AirbrushSizeWindow.cpp" />
+		<Unit filename="Src\AirBrushing\AirbrushSizeWindow.h" />
+		<Unit filename="Src\AirBrushing\AirbrushingState.cpp" />
+		<Unit filename="Src\AirBrushing\AirbrushingState.h" />
+		<Unit filename="Src\AirBrushing\AirbrushingSubMenu.cpp" />
+		<Unit filename="Src\AirBrushing\AirbrushingSubMenu.h" />
+		<Unit filename="Src\Button\ColourButton.cpp" />
+		<Unit filename="Src\Button\ColourButton.h" />
+		<Unit filename="Src\Button\FontButton.cpp" />
+		<Unit filename="Src\Button\FontButton.h" />
+		<Unit filename="Src\Button\HoverButton.cpp" />
+		<Unit filename="Src\Button\HoverButton.h" />
+		<Unit filename="Src\Custom\ButtonBarTemplate.cpp" />
+		<Unit filename="Src\Custom\ButtonBarTemplate.h" />
+		<Unit filename="Src\Custom\FileControl.cpp" />
+		<Unit filename="Src\Custom\FileControl.h" />
+		<Unit filename="Src\Custom\FontButtonBar.cpp" />
+		<Unit filename="Src\Custom\FontButtonBar.h" />
+		<Unit filename="Src\Custom\HoverButtonBar.cpp" />
+		<Unit filename="Src\Custom\HoverButtonBar.h" />
+		<Unit filename="Src\Custom\PercentageController.cpp" />
+		<Unit filename="Src\Custom\PercentageController.h" />
+		<Unit filename="Src\Custom\SizeBar.cpp" />
+		<Unit filename="Src\Custom\SizeBar.h" />
+		<Unit filename="Src\Custom\SizeWindow.cpp" />
+		<Unit filename="Src\Custom\SizeWindow.h" />
+		<Unit filename="Src\Custom\UserButtonBar.cpp" />
+		<Unit filename="Src\Custom\UserButtonBar.h" />
+		<Unit filename="Src\Dialog\FileDialog.cpp" />
+		<Unit filename="Src\Dialog\FileDialog.h" />
+		<Unit filename="Src\DrawingState\DrawingState.cpp" />
+		<Unit filename="Src\DrawingState\DrawingState.h" />
+		<Unit filename="Src\Drawing\DrawingSubMenu.cpp" />
+		<Unit filename="Src\Drawing\DrawingSubMenu.h" />
+		<Unit filename="Src\Drawing\FreeDrawingState.cpp" />
+		<Unit filename="Src\Drawing\FreeDrawingState.h" />
+		<Unit filename="Src\Filling\FillState.cpp" />
+		<Unit filename="Src\Filling\FillState.h" />
+		<Unit filename="Src\Filling\FillSubMenu.cpp" />
+		<Unit filename="Src\Filling\FillSubMenu.h" />
+		<Unit filename="Src\General\Bitmap.cpp" />
+		<Unit filename="Src\General\Bitmap.h" />
+		<Unit filename="Src\General\Colours.h" />
+		<Unit filename="Src\General\Controller.cpp" />
+		<Unit filename="Src\General\Controller.h" />
+		<Unit filename="Src\General\Font.cpp" />
+		<Unit filename="Src\General\Font.h" />
+		<Unit filename="Src\General\General.cpp" />
+		<Unit filename="Src\General\General.h" />
+		<Unit filename="Src\General\IniProfile.cpp" />
+		<Unit filename="Src\General\IniProfile.h" />
+		<Unit filename="Src\General\Observer.cpp" />
+		<Unit filename="Src\General\Observer.h" />
+		<Unit filename="Src\General\Profile.cpp" />
+		<Unit filename="Src\General\Profile.h" />
+		<Unit filename="Src\General\RectUtilities.cpp" />
+		<Unit filename="Src\General\RectUtilities.h" />
+		<Unit filename="Src\General\SimpleMain.cpp" />
+		<Unit filename="Src\General\Subject.cpp" />
+		<Unit filename="Src\General\Subject.h" />
+		<Unit filename="Src\Resource\Airbrush.bmp" />
+		<Unit filename="Src\Resource\Airbrush.cur" />
+		<Unit filename="Src\Resource\ArrowDown.bmp" />
+		<Unit filename="Src\Resource\ArrowUp.bmp" />
+		<Unit filename="Src\Resource\Cross.bmp" />
+		<Unit filename="Src\Resource\CrossPressed.bmp" />
+		<Unit filename="Src\Resource\Erase.bmp" />
+		<Unit filename="Src\Resource\ErasePressed.bmp" />
+		<Unit filename="Src\Resource\Guest.bmp" />
+		<Unit filename="Src\Resource\GuestPressed.bmp" />
+		<Unit filename="Src\Resource\Load.bmp" />
+		<Unit filename="Src\Resource\LoadPressed.bmp" />
+		<Unit filename="Src\Resource\Natasja.bmp" />
+		<Unit filename="Src\Resource\NatasjaPressed.bmp" />
+		<Unit filename="Src\Resource\NatasjaUnpressed.bmp" />
+		<Unit filename="Src\Resource\Pencil.bmp" />
+		<Unit filename="Src\Resource\Redo.bmp" />
+		<Unit filename="Src\Resource\RedoPressed.bmp" />
+		<Unit filename="Src\Resource\Save.bmp" />
+		<Unit filename="Src\Resource\SavePressed.bmp" />
+		<Unit filename="Src\Resource\SimpleDraw.aps" />
+		<Unit filename="Src\Resource\Smudge.bmp" />
+		<Unit filename="Src\Resource\Stamp.bmp" />
+		<Unit filename="Src\Resource\Stijn.BMP" />
+		<Unit filename="Src\Resource\StijnPressed.BMP" />
+		<Unit filename="Src\Resource\Testje.bmp" />
+		<Unit filename="Src\Resource\UndoPressed.bmp" />
+		<Unit filename="Src\Resource\arrowleft.bmp" />
+		<Unit filename="Src\Resource\arrowright.bmp" />
+		<Unit filename="Src\Resource\bitmap1.bmp" />
+		<Unit filename="Src\Resource\bmpload1.bmp" />
+		<Unit filename="Src\Resource\bmpload2.bmp" />
+		<Unit filename="Src\Resource\cursor1.cur" />
+		<Unit filename="Src\Resource\emmer.bmp" />
+		<Unit filename="Src\Resource\emmer.cur" />
+		<Unit filename="Src\Resource\font.bmp" />
+		<Unit filename="Src\Resource\fonts.txt" />
+		<Unit filename="Src\Resource\icon1.ico" />
+		<Unit filename="Src\Resource\potlood.cur" />
+		<Unit filename="Src\Resource\potlood2.cur" />
+		<Unit filename="Src\Resource\resource.h" />
+		<Unit filename="Src\Resource\undo.bmp" />
+		<Unit filename="Src\Smudging\SmudgingState.cpp" />
+		<Unit filename="Src\Smudging\SmudgingState.h" />
+		<Unit filename="Src\Smudging\SmudgingSubMenu.cpp" />
+		<Unit filename="Src\Smudging\SmudgingSubMenu.h" />
+		<Unit filename="Src\Stamping\StampPositionState.cpp" />
+		<Unit filename="Src\Stamping\StampPositionState.h" />
+		<Unit filename="Src\Stamping\StampSizeState.cpp" />
+		<Unit filename="Src\Stamping\StampSizeState.h" />
+		<Unit filename="Src\Stamping\StampState.cpp" />
+		<Unit filename="Src\Stamping\StampState.h" />
+		<Unit filename="Src\Stamping\StampSubMenu.cpp" />
+		<Unit filename="Src\Stamping\StampSubMenu.h" />
+		<Unit filename="Src\Stamping\StampSubState.cpp" />
+		<Unit filename="Src\Stamping\StampSubState.h" />
+		<Unit filename="Src\Thickness\ThicknessControl.cpp" />
+		<Unit filename="Src\Thickness\ThicknessControl.h" />
+		<Unit filename="Src\Thickness\ThicknessPanel.cpp" />
+		<Unit filename="Src\Thickness\ThicknessPanel.h" />
+		<Unit filename="Src\Thickness\ThicknessSizeWindow.cpp" />
+		<Unit filename="Src\Thickness\ThicknessSizeWindow.h" />
+		<Unit filename="Src\Window\ColourWindow.cpp" />
+		<Unit filename="Src\Window\ColourWindow.h" />
+		<Unit filename="Src\Window\Definitions.h" />
+		<Unit filename="Src\Window\DrawingWindow.cpp" />
+		<Unit filename="Src\Window\DrawingWindow.h" />
+		<Unit filename="Src\Window\GeneralToolMenu.cpp" />
+		<Unit filename="Src\Window\GeneralToolMenu.h" />
+		<Unit filename="Src\Window\HoverWindow.cpp" />
+		<Unit filename="Src\Window\HoverWindow.h" />
+		<Unit filename="Src\Window\LetterWindow.cpp" />
+		<Unit filename="Src\Window\LetterWindow.h" />
+		<Unit filename="Src\Window\MainWindow.cpp" />
+		<Unit filename="Src\Window\MainWindow.h" />
+		<Unit filename="Src\Window\SpecialToolMenu.cpp" />
+		<Unit filename="Src\Window\SpecialToolMenu.h" />
+		<Unit filename="Src\Writing\LetterSizeWindow.cpp" />
+		<Unit filename="Src\Writing\LetterSizeWindow.h" />
+		<Unit filename="Src\Writing\LetterState.cpp" />
+		<Unit filename="Src\Writing\LetterState.h" />
+		<Unit filename="Src\Writing\LetterSubMenu.cpp" />
+		<Unit filename="Src\Writing\LetterSubMenu.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,592 @@
+# depslib dependency file v1.0
+1317582234 source:e:\projects\codeblocks\tekenen\simpledraw\simpledraw.rc
+	"resource/resource.h"
+	"afxres.h"
+
+1207511576 e:\projects\codeblocks\tekenen\simpledraw\src\resource\resource.h
+
+1207596958 source:e:\projects\codeblocks\tekenen\simpledraw\src\airbrushing\airbrushsizewindow.cpp
+	"AirbrushSizeWindow.h"
+	"General/Controller.h"
+	"General/colours.h"
+
+1207596611 e:\projects\codeblocks\tekenen\simpledraw\src\airbrushing\airbrushsizewindow.h
+	"Thickness/ThicknessControl.h"
+	"Custom/SizeWindow.h"
+
+1317582271 e:\projects\codeblocks\tekenen\simpledraw\src\thickness\thicknesscontrol.h
+	"Window/Window.h"
+	"General/Subject.h"
+
+1317584350 x:\tekenen\mijnwindows\source\window\window.h
+	<windows.h>
+	<tchar.h>
+	<list>
+	<string>
+
+1201103786 e:\projects\codeblocks\tekenen\simpledraw\src\general\subject.h
+	<list>
+
+1207081692 e:\projects\codeblocks\tekenen\simpledraw\src\custom\sizewindow.h
+	"General/Subject.h"
+	"Window/FrameWindow.h"
+
+1317584590 x:\tekenen\mijnwindows\source\window\framewindow.h
+	"Window/Window.h"
+
+1208807205 e:\projects\codeblocks\tekenen\simpledraw\src\general\controller.h
+	<windows.h>
+	<list>
+	<string>
+	"General.h"
+
+1207510410 e:\projects\codeblocks\tekenen\simpledraw\src\general\general.h
+	<vector>
+	"Window/Window.h"
+
+1205788184 e:\projects\codeblocks\tekenen\simpledraw\src\general\colours.h
+
+1317582296 source:e:\projects\codeblocks\tekenen\simpledraw\src\airbrushing\airbrushingstate.cpp
+	"AirbrushingState.h"
+	"Resource/resource.h"
+	"AirbrushingSubMenu.h"
+	"Window/SpecialToolMenu.h"
+	"Window/DrawingWindow.h"
+
+1207598316 e:\projects\codeblocks\tekenen\simpledraw\src\airbrushing\airbrushingstate.h
+	"DrawingState/DrawingState.h"
+
+1317582324 e:\projects\codeblocks\tekenen\simpledraw\src\drawingstate\drawingstate.h
+	<windows.h>
+	<string>
+	"General/Controller.h"
+
+1207596689 e:\projects\codeblocks\tekenen\simpledraw\src\airbrushing\airbrushingsubmenu.h
+	"Window/SpecialToolMenu.h"
+	"General/Observer.h"
+
+1317582324 e:\projects\codeblocks\tekenen\simpledraw\src\window\specialtoolmenu.h
+	"Window/FrameWindow.h"
+	"General/Subject.h"
+
+1201103786 e:\projects\codeblocks\tekenen\simpledraw\src\general\observer.h
+
+1207081910 e:\projects\codeblocks\tekenen\simpledraw\src\window\drawingwindow.h
+	<windows.h>
+	"General/General.h"
+	"General/Observer.h"
+	"Window/Window.h"
+
+1317582337 source:e:\projects\codeblocks\tekenen\simpledraw\src\airbrushing\airbrushingsubmenu.cpp
+	"AirbrushingSubMenu.h"
+	"General/Profile.h"
+	"AirbrushingState.h"
+	"Window/ColourWindow.h"
+	"AirbrushSizeWindow.h"
+
+1317582351 e:\projects\codeblocks\tekenen\simpledraw\src\general\profile.h
+	<string>
+	<tchar.h>
+	<vector>
+
+1207082149 e:\projects\codeblocks\tekenen\simpledraw\src\window\colourwindow.h
+	<windows.h>
+	<vector>
+	"General/Subject.h"
+	"Window/Window.h"
+
+1317582379 source:e:\projects\codeblocks\tekenen\simpledraw\src\button\colourbutton.cpp
+	"ColourButton.h"
+
+1204126556 e:\projects\codeblocks\tekenen\simpledraw\src\button\colourbutton.h
+	"Button/Button.h"
+
+1204583530 x:\tekenen\mijnwindows\source\button\button.h
+	"Window/Window.h"
+
+1317582383 source:e:\projects\codeblocks\tekenen\simpledraw\src\button\fontbutton.cpp
+	"FontButton.h"
+	<assert.h>
+
+1205619076 e:\projects\codeblocks\tekenen\simpledraw\src\button\fontbutton.h
+	"Button/Button.h"
+	"Button/ButtonStrategy.h"
+	"General/Font.h"
+
+1317582417 x:\tekenen\mijnwindows\source\button\buttonstrategy.h
+
+1205708452 e:\projects\codeblocks\tekenen\simpledraw\src\general\font.h
+	"Window/Window.h"
+
+1317582860 source:e:\projects\codeblocks\tekenen\simpledraw\src\button\hoverbutton.cpp
+	"HoverButton.h"
+	"c:\mingw\include/wingdi.h"
+	"Window/HoverWindow.h"
+
+1206571848 e:\projects\codeblocks\tekenen\simpledraw\src\button\hoverbutton.h
+	"Button/Button.h"
+	"Button/ButtonStrategy.h"
+
+1301111162 c:\mingw\include\wingdi.h
+
+1206644022 e:\projects\codeblocks\tekenen\simpledraw\src\window\hoverwindow.h
+	"Window/Window.h"
+
+1207083384 source:e:\projects\codeblocks\tekenen\simpledraw\src\custom\buttonbartemplate.cpp
+	"ButtonBarTemplate.h"
+	"Resource/resource.h"
+	"Button/BitmapButton.h"
+	"Control/ButtonBar.h"
+
+1317583396 e:\projects\codeblocks\tekenen\simpledraw\src\custom\buttonbartemplate.h
+	"Control/ButtonBar.h"
+	"Window/FrameWindow.h"
+	"General/Subject.h"
+	<assert.h>
+	<vector>
+
+1205619966 x:\tekenen\mijnwindows\source\control\buttonbar.h
+	"Window/Window.h"
+	<map>
+	<vector>
+
+1204126650 x:\tekenen\mijnwindows\source\button\bitmapbutton.h
+	"Button.h"
+	<string>
+
+1317583553 source:e:\projects\codeblocks\tekenen\simpledraw\src\custom\filecontrol.cpp
+	"FileControl.h"
+	<windef.h>
+	"General/Profile.h"
+	"Button/BitmapButton.h"
+
+1205186022 e:\projects\codeblocks\tekenen\simpledraw\src\custom\filecontrol.h
+	"Window/FrameWindow.h"
+	<vector>
+
+1317583582 source:e:\projects\codeblocks\tekenen\simpledraw\src\custom\fontbuttonbar.cpp
+	"FontButtonBar.h"
+	<assert.h>
+	"Button/FontButton.h"
+	"Button/BitmapButton.h"
+	"Control/ButtonBar.h"
+	"Stamping/StampState.h"
+
+1205620672 e:\projects\codeblocks\tekenen\simpledraw\src\custom\fontbuttonbar.h
+	"ButtonBarTemplate.h"
+	<vector>
+
+1207081854 e:\projects\codeblocks\tekenen\simpledraw\src\stamping\stampstate.h
+	"DrawingState/DrawingState.h"
+
+1317583605 source:e:\projects\codeblocks\tekenen\simpledraw\src\custom\hoverbuttonbar.cpp
+	"HoverButtonBar.h"
+	<assert.h>
+	"Resource/resource.h"
+	"Button/HoverButton.h"
+	"Button/BitmapButton.h"
+	"Control/ButtonBar.h"
+	"Stamping/StampState.h"
+
+1206644178 e:\projects\codeblocks\tekenen\simpledraw\src\custom\hoverbuttonbar.h
+	"Window/FrameWindow.h"
+	<vector>
+
+1209079093 source:e:\projects\codeblocks\tekenen\simpledraw\src\custom\percentagecontroller.cpp
+	"PercentageController.h"
+
+1209081629 e:\projects\codeblocks\tekenen\simpledraw\src\custom\percentagecontroller.h
+	"General/Subject.h"
+
+1207083385 source:e:\projects\codeblocks\tekenen\simpledraw\src\custom\sizebar.cpp
+	"SizeBar.h"
+	"Resource/resource.h"
+	"Button/BitmapButton.h"
+
+1206313074 e:\projects\codeblocks\tekenen\simpledraw\src\custom\sizebar.h
+	"Control/ButtonBar.h"
+
+1316898402 source:e:\projects\codeblocks\tekenen\simpledraw\src\custom\sizewindow.cpp
+	"SizeWindow.h"
+	<assert.h>
+	"Button/BitmapButton.h"
+	"Custom/SizeBar.h"
+
+1317583618 source:e:\projects\codeblocks\tekenen\simpledraw\src\custom\userbuttonbar.cpp
+	"UserButtonBar.h"
+	"General/Profile.h"
+	"Resource/resource.h"
+	"Button/BitmapButton.h"
+
+1208635158 e:\projects\codeblocks\tekenen\simpledraw\src\custom\userbuttonbar.h
+	"Control/RadioButtonBar.h"
+
+1203280906 x:\tekenen\mijnwindows\source\control\radiobuttonbar.h
+	"ButtonBar.h"
+
+1317584005 source:e:\projects\codeblocks\tekenen\simpledraw\src\dialog\filedialog.cpp
+	"FileDialog.h"
+	<tchar.h>
+	"General/Profile.h"
+	"Resource/resource.h"
+	"Button/BitmapButton.h"
+	"Custom/UserButtonBar.h"
+	"Custom/FileControl.h"
+
+1208634298 e:\projects\codeblocks\tekenen\simpledraw\src\dialog\filedialog.h
+	<map>
+	<vector>
+	"Dialog/Dialog.h"
+	"General/Profile.h"
+
+1202766474 x:\tekenen\mijnwindows\source\dialog\dialog.h
+	"Window/Window.h"
+	"Window/FrameWindow.h"
+
+1317584027 source:e:\projects\codeblocks\tekenen\simpledraw\src\drawingstate\drawingstate.cpp
+	"DrawingState.h"
+	<assert.h>
+	<tchar.h>
+	"General/Controller.h"
+	"General/RectUtilities.h"
+	"Window/DrawingWindow.h"
+
+1201302794 e:\projects\codeblocks\tekenen\simpledraw\src\general\rectutilities.h
+	<windows.h>
+
+1317584035 source:e:\projects\codeblocks\tekenen\simpledraw\src\drawing\drawingsubmenu.cpp
+	"DrawingSubMenu.h"
+	"General/Profile.h"
+	"Drawing/FreeDrawingState.h"
+	"Window/ColourWindow.h"
+	"Thickness/ThicknessSizeWindow.h"
+
+1207082069 e:\projects\codeblocks\tekenen\simpledraw\src\drawing\drawingsubmenu.h
+	"Window/SpecialToolMenu.h"
+	"General/Observer.h"
+
+1207082068 e:\projects\codeblocks\tekenen\simpledraw\src\drawing\freedrawingstate.h
+	"DrawingState/DrawingState.h"
+
+1205790242 e:\projects\codeblocks\tekenen\simpledraw\src\thickness\thicknesssizewindow.h
+	"ThicknessControl.h"
+	"Custom/SizeWindow.h"
+
+1317584066 source:e:\projects\codeblocks\tekenen\simpledraw\src\drawing\freedrawingstate.cpp
+	"FreeDrawingState.h"
+	"Resource/resource.h"
+	"DrawingSubMenu.h"
+	"Window/SpecialToolMenu.h"
+	"Window/DrawingWindow.h"
+
+1317584075 source:e:\projects\codeblocks\tekenen\simpledraw\src\filling\fillstate.cpp
+	"FillState.h"
+	"Resource/resource.h"
+	"FillSubMenu.h"
+	"Window/SpecialToolMenu.h"
+	"Window/DrawingWindow.h"
+
+1207081822 e:\projects\codeblocks\tekenen\simpledraw\src\filling\fillstate.h
+	"DrawingState/DrawingState.h"
+
+1207081893 e:\projects\codeblocks\tekenen\simpledraw\src\filling\fillsubmenu.h
+	"Window/SpecialToolMenu.h"
+	"General/Observer.h"
+	<vector>
+	"General/Font.h"
+
+1207082068 source:e:\projects\codeblocks\tekenen\simpledraw\src\filling\fillsubmenu.cpp
+	"FillSubMenu.h"
+	<assert.h>
+	"General/Controller.h"
+	"General/Profile.h"
+	"Custom/FontButtonBar.h"
+	"FillState.h"
+	"Window/ColourWindow.h"
+
+1317584089 source:e:\projects\codeblocks\tekenen\simpledraw\src\general\bitmap.cpp
+	"Bitmap.h"
+	<tchar.h>
+
+1201900804 e:\projects\codeblocks\tekenen\simpledraw\src\general\bitmap.h
+	<windows.h>
+	<string>
+
+1317584099 source:e:\projects\codeblocks\tekenen\simpledraw\src\general\controller.cpp
+	"Controller.h"
+	<tchar.h>
+	"Bitmap.h"
+	"Window/DrawingWindow.h"
+	"Window/MainWindow.h"
+	"Dialog/FileDialog.h"
+	"IniProfile.h"
+
+1206449624 e:\projects\codeblocks\tekenen\simpledraw\src\window\mainwindow.h
+	<windows.h>
+	"Window/Window.h"
+
+1208808757 e:\projects\codeblocks\tekenen\simpledraw\src\general\iniprofile.h
+	"Profile.h"
+
+1205708422 source:e:\projects\codeblocks\tekenen\simpledraw\src\general\font.cpp
+	"Font.h"
+	<assert.h>
+
+1317584112 source:e:\projects\codeblocks\tekenen\simpledraw\src\general\general.cpp
+	"General.h"
+	<algorithm>
+
+1208808902 source:e:\projects\codeblocks\tekenen\simpledraw\src\general\iniprofile.cpp
+	"iniprofile.h"
+	<windows.h>
+
+1317584130 source:e:\projects\codeblocks\tekenen\simpledraw\src\general\observer.cpp
+	"observer.h"
+	"subject.h"
+
+1317584137 source:e:\projects\codeblocks\tekenen\simpledraw\src\general\profile.cpp
+	"Profile.h"
+	<assert.h>
+	<windows.h>
+
+1317584146 source:e:\projects\codeblocks\tekenen\simpledraw\src\general\rectutilities.cpp
+	"RectUtilities.h"
+	<vector>
+
+1317584653 source:e:\projects\codeblocks\tekenen\simpledraw\src\general\simplemain.cpp
+	<windows.h>
+	<tchar.h>
+	"Controller.h"
+	"Window/MainWindow.h"
+
+1317584675 source:e:\projects\codeblocks\tekenen\simpledraw\src\general\subject.cpp
+	"subject.h"
+	<algorithm>
+	"observer.h"
+
+1317584838 source:e:\projects\codeblocks\tekenen\simpledraw\src\smudging\smudgingstate.cpp
+	<windef.h>
+	"SmudgingState.h"
+	"Resource/resource.h"
+	"SmudgingSubMenu.h"
+	"Window/SpecialToolMenu.h"
+	"Window/DrawingWindow.h"
+
+1206875150 e:\projects\codeblocks\tekenen\simpledraw\src\smudging\smudgingstate.h
+	"DrawingState/DrawingState.h"
+	<cmath>
+
+1207420825 e:\projects\codeblocks\tekenen\simpledraw\src\smudging\smudgingsubmenu.h
+	"Window/SpecialToolMenu.h"
+	"General/Observer.h"
+
+1317584859 source:e:\projects\codeblocks\tekenen\simpledraw\src\smudging\smudgingsubmenu.cpp
+	"SmudgingSubMenu.h"
+	"General/Profile.h"
+	"SmudgingState.h"
+	"Window/ColourWindow.h"
+	"Thickness/ThicknessSizeWindow.h"
+
+1207509062 source:e:\projects\codeblocks\tekenen\simpledraw\src\stamping\stamppositionstate.cpp
+	"StampPositionState.h"
+	"StampState.h"
+	"Window/DrawingWindow.h"
+	"Window/HoverWindow.h"
+	"Window/Definitions.h"
+
+1206477192 e:\projects\codeblocks\tekenen\simpledraw\src\stamping\stamppositionstate.h
+	"StampSubState.h"
+
+1317584866 e:\projects\codeblocks\tekenen\simpledraw\src\stamping\stampsubstate.h
+	<windows.h>
+
+1205157118 e:\projects\codeblocks\tekenen\simpledraw\src\window\definitions.h
+	"Window/Window.h"
+
+1317586102 source:e:\projects\codeblocks\tekenen\simpledraw\src\stamping\stampsizestate.cpp
+	"StampSizeState.h"
+	"StampState.h"
+	"Window/DrawingWindow.h"
+	"Window/HoverWindow.h"
+
+1208638978 e:\projects\codeblocks\tekenen\simpledraw\src\stamping\stampsizestate.h
+	"StampSubState.h"
+
+1317586150 source:e:\projects\codeblocks\tekenen\simpledraw\src\stamping\stampstate.cpp
+	"StampState.h"
+	<assert.h>
+	"StampSubMenu.h"
+	"Window/Definitions.h"
+	"Window/DrawingWindow.h"
+	"Window/HoverWIndow.h"
+	"Window/SpecialToolMenu.h"
+
+1207082069 e:\projects\codeblocks\tekenen\simpledraw\src\stamping\stampsubmenu.h
+	"Window/HoverWindow.h"
+	"Window/SpecialToolMenu.h"
+	"General/Observer.h"
+	<vector>
+
+1317586158 source:e:\projects\codeblocks\tekenen\simpledraw\src\stamping\stampsubmenu.cpp
+	"StampSubMenu.h"
+	"Button/HoverButton.h"
+	"Custom/HoverButtonBar.h"
+	"Custom/SizeBar.h"
+	"General/Profile.h"
+	"StampState.h"
+	"Window/ColourWindow.h"
+	"Thickness/ThicknessPanel.h"
+
+1205789766 e:\projects\codeblocks\tekenen\simpledraw\src\thickness\thicknesspanel.h
+	"Button/ColourButton.h"
+	"Control/RadioButtonBar.h"
+	"ThicknessControl.h"
+
+1207082069 source:e:\projects\codeblocks\tekenen\simpledraw\src\stamping\stampsubstate.cpp
+	"StampSubState.h"
+	"StampState.h"
+	"Window/DrawingWindow.h"
+	"Window/HoverWindow.h"
+
+1317586169 source:e:\projects\codeblocks\tekenen\simpledraw\src\thickness\thicknesscontrol.cpp
+	"ThicknessControl.h"
+
+1317586177 source:e:\projects\codeblocks\tekenen\simpledraw\src\thickness\thicknesspanel.cpp
+	"ThicknessPanel.h"
+
+1207081822 source:e:\projects\codeblocks\tekenen\simpledraw\src\thickness\thicknesssizewindow.cpp
+	"ThicknessSizeWindow.h"
+	"General/Controller.h"
+	"General/colours.h"
+
+1317586215 source:e:\projects\codeblocks\tekenen\simpledraw\src\window\colourwindow.cpp
+	"ColourWindow.h"
+	<assert.h>
+	"General/Controller.h"
+	"Button/ColourButton.h"
+
+1317586304 source:e:\projects\codeblocks\tekenen\simpledraw\src\window\drawingwindow.cpp
+	"DrawingWindow.h"
+	<stdio.h>
+	<tchar.h>
+	"DrawingState/DrawingState.h"
+	"Filling/FillState.h"
+	"Drawing/FreeDrawingState.h"
+	"Stamping/StampState.h"
+	"Writing/LetterState.h"
+	"Smudging/SmudgingState.h"
+	"Airbrushing/AirbrushingState.h"
+	"Resource/resource.h"
+
+1207082068 e:\projects\codeblocks\tekenen\simpledraw\src\writing\letterstate.h
+	"DrawingState/DrawingState.h"
+	"General/Observer.h"
+
+1317586314 source:e:\projects\codeblocks\tekenen\simpledraw\src\window\generaltoolmenu.cpp
+	"GeneralToolMenu.h"
+	"Button/BitmapButton.h"
+	"General/Controller.h"
+	"Resource/resource.h"
+
+1207511576 e:\projects\codeblocks\tekenen\simpledraw\src\window\generaltoolmenu.h
+	"Control/RadioButtonBar.h"
+
+1207507561 source:e:\projects\codeblocks\tekenen\simpledraw\src\window\hoverwindow.cpp
+	"HoverWindow.h"
+	<assert.h>
+	"Stamping/StampState.h"
+	"Stamping/StampPositionState.h"
+	"Stamping/StampSizeState.h"
+	"Window/Definitions.h"
+	"Window/DrawingWindow.h"
+
+1207082401 source:e:\projects\codeblocks\tekenen\simpledraw\src\window\letterwindow.cpp
+	"LetterWindow.h"
+	"General/Controller.h"
+	"Window/Definitions.h"
+	"Window/DrawingWindow.h"
+
+1205708422 e:\projects\codeblocks\tekenen\simpledraw\src\window\letterwindow.h
+	"General/Font.h"
+	"Window/Window.h"
+
+1317586335 source:e:\projects\codeblocks\tekenen\simpledraw\src\window\mainwindow.cpp
+	"MainWindow.h"
+	<windows.h>
+	"General/Controller.h"
+	"DrawingWindow.h"
+	"GeneralToolMenu.h"
+	"Resource/resource.h"
+	"General/Profile.h"
+	"SpecialToolMenu.h"
+	"Button/BitmapButton.h"
+	"Custom/UserButtonBar.h"
+
+1317586344 source:e:\projects\codeblocks\tekenen\simpledraw\src\window\specialtoolmenu.cpp
+	"SpecialToolMenu.h"
+	"Drawing/DrawingSubMenu.h"
+
+1317586352 source:e:\projects\codeblocks\tekenen\simpledraw\src\writing\lettersizewindow.cpp
+	"LetterSizeWindow.h"
+	"General/Controller.h"
+	"General/Colours.h"
+
+1205787392 e:\projects\codeblocks\tekenen\simpledraw\src\writing\lettersizewindow.h
+	"General/Font.h"
+	"Custom/SizeWindow.h"
+
+1317586365 source:e:\projects\codeblocks\tekenen\simpledraw\src\writing\letterstate.cpp
+	"LetterState.h"
+	<assert.h>
+	"LetterSubMenu.h"
+	"Window/Definitions.h"
+	"Window/DrawingWindow.h"
+	"Window/LetterWIndow.h"
+	"Window/SpecialToolMenu.h"
+
+1207082068 e:\projects\codeblocks\tekenen\simpledraw\src\writing\lettersubmenu.h
+	"Window/SpecialToolMenu.h"
+	"General/Observer.h"
+	<vector>
+	"General/Font.h"
+
+1207082149 source:e:\projects\codeblocks\tekenen\simpledraw\src\writing\lettersubmenu.cpp
+	"LetterSubMenu.h"
+	<assert.h>
+	"General/Controller.h"
+	"General/Profile.h"
+	"Custom/FontButtonBar.h"
+	"LetterSizeWindow.h"
+	"Custom/SizeWindow.h"
+	"Window/ColourWindow.h"
+
+1317581650 e:\projects\codeblocks\tekenen\mijnwindows\source\window\window.h
+	<windows.h>
+	<tchar.h>
+	<list>
+	<string>
+
+1317581714 e:\projects\codeblocks\tekenen\mijnwindows\source\window\framewindow.h
+	"Window/Window.h"
+
+1317581510 e:\projects\codeblocks\tekenen\mijnwindows\source\button\button.h
+	"Window/Window.h"
+
+1317581519 e:\projects\codeblocks\tekenen\mijnwindows\source\button\buttonstrategy.h
+
+1317581634 e:\projects\codeblocks\tekenen\mijnwindows\source\control\buttonbar.h
+	"Window/Window.h"
+	<map>
+	<vector>
+
+1204126650 e:\projects\codeblocks\tekenen\mijnwindows\source\button\bitmapbutton.h
+	"Button.h"
+	<string>
+
+1203280906 e:\projects\codeblocks\tekenen\mijnwindows\source\control\radiobuttonbar.h
+	"ButtonBar.h"
+
+1317581733 e:\projects\codeblocks\tekenen\mijnwindows\source\dialog\dialog.h
+	"Window/Window.h"
+	"Window/FrameWindow.h"
+

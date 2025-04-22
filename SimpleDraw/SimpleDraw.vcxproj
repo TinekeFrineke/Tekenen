@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{365B10D7-9F9E-48DD-8BDB-48DA56D24351}</ProjectGuid>
+    <RootNamespace>SimpleDraw</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>16.0.29511.113</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SolutionDir)MijnWindows\Source\;$(ProjectDir)\Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;UNICODE;_UNICODE;CRTDBG_MAP_ALLOC;PRINT_MESSAGES=0;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader />
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level4</WarningLevel>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>C:\Projects\msvc\Tekenen\SimpleDraw\Src\General;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>D:\Projects\VC2019\Tekenen\MijnWindows\Debug\MijnWindows.lib;Msimg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)SimpleDraw.exe</OutputFile>
+      <AdditionalLibraryDirectories>C:\Projects\msvc\Tekenen\MijnWindows\Output\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)SimpleDraw.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol />
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)MijnWindows\Source\;$(ProjectDir)\Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;UNICODE;_UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat />
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>D:\Projects\VC2019\Tekenen\MijnWindows\Release\MijnWindows.lib;Msimg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)SimpleDraw.exe</OutputFile>
+      <AdditionalLibraryDirectories>C:\Projects\msvc\Tekenen\MijnWindows\Output\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Image Include="Src\Resource\Airbrush.bmp" />
+    <Image Include="Src\Resource\ArrowDown.bmp" />
+    <Image Include="Src\Resource\arrowleft.bmp" />
+    <Image Include="Src\Resource\arrowright.bmp" />
+    <Image Include="Src\Resource\ArrowUp.bmp" />
+    <Image Include="Src\Resource\bitmap1.bmp" />
+    <Image Include="Src\Resource\bmpload1.bmp" />
+    <Image Include="Src\Resource\bmpload2.bmp" />
+    <Image Include="Src\Resource\Cross.bmp" />
+    <Image Include="Src\Resource\CrossPressed.bmp" />
+    <Image Include="Src\Resource\emmer.bmp" />
+    <Image Include="Src\Resource\Erase.bmp" />
+    <Image Include="Src\Resource\ErasePressed.bmp" />
+    <Image Include="Src\Resource\font.bmp" />
+    <Image Include="Src\Resource\Guest.bmp" />
+    <Image Include="Src\Resource\GuestPressed.bmp" />
+    <Image Include="Src\Resource\icon1.ico" />
+    <Image Include="Src\Resource\Load.bmp" />
+    <Image Include="Src\Resource\LoadPressed.bmp" />
+    <Image Include="Src\Resource\Natasja.bmp" />
+    <Image Include="Src\Resource\NatasjaPressed.bmp" />
+    <Image Include="Src\Resource\NatasjaUnpressed.bmp" />
+    <Image Include="Src\Resource\Pencil.bmp" />
+    <Image Include="Src\Resource\Redo.bmp" />
+    <Image Include="Src\Resource\RedoPressed.bmp" />
+    <Image Include="Src\Resource\Save.bmp" />
+    <Image Include="Src\Resource\SavePressed.bmp" />
+    <Image Include="Src\Resource\Smudge.bmp" />
+    <Image Include="Src\Resource\Stamp.bmp" />
+    <Image Include="Src\Resource\Stijn.BMP" />
+    <Image Include="Src\Resource\StijnPressed.BMP" />
+    <Image Include="Src\Resource\Testje.bmp" />
+    <Image Include="Src\Resource\undo.bmp" />
+    <Image Include="Src\Resource\UndoPressed.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Src\Resource\Airbrush.cur" />
+    <None Include="Src\Resource\cursor1.cur" />
+    <None Include="Src\Resource\emmer.cur" />
+    <None Include="Src\Resource\potlood.cur" />
+    <None Include="Src\Resource\potlood2.cur" />
+    <None Include="Src\Resource\SimpleDraw.aps" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Src\Resource\fonts.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\AirBrushing\AirbrushingState.h" />
+    <ClInclude Include="Src\AirBrushing\AirbrushingSubMenu.h" />
+    <ClInclude Include="Src\AirBrushing\AirbrushSizeWindow.h" />
+    <ClInclude Include="Src\Button\ColourButton.h" />
+    <ClInclude Include="Src\Button\FontButton.h" />
+    <ClInclude Include="Src\Button\HoverButton.h" />
+    <ClInclude Include="Src\Custom\ButtonBarTemplate.h" />
+    <ClInclude Include="Src\Custom\FileControl.h" />
+    <ClInclude Include="Src\Custom\FontButtonBar.h" />
+    <ClInclude Include="Src\Custom\HoverButtonBar.h" />
+    <ClInclude Include="Src\Custom\PercentageController.h" />
+    <ClInclude Include="Src\Custom\SizeBar.h" />
+    <ClInclude Include="Src\Custom\SizeWindow.h" />
+    <ClInclude Include="Src\Custom\UserButtonBar.h" />
+    <ClInclude Include="Src\Dialog\FileDialog.h" />
+    <ClInclude Include="Src\DrawingState\DrawingState.h" />
+    <ClInclude Include="Src\Drawing\DrawingSubMenu.h" />
+    <ClInclude Include="Src\Drawing\FreeDrawingState.h" />
+    <ClInclude Include="Src\Filling\FillState.h" />
+    <ClInclude Include="Src\Filling\FillSubMenu.h" />
+    <ClInclude Include="Src\General\Bitmap.h" />
+    <ClInclude Include="Src\General\Colours.h" />
+    <ClInclude Include="Src\General\Controller.h" />
+    <ClInclude Include="Src\General\Font.h" />
+    <ClInclude Include="Src\General\General.h" />
+    <ClInclude Include="Src\General\IniProfile.h" />
+    <ClInclude Include="Src\General\Observer.h" />
+    <ClInclude Include="Src\General\Profile.h" />
+    <ClInclude Include="Src\General\RectUtilities.h" />
+    <ClInclude Include="Src\General\Subject.h" />
+    <ClInclude Include="Src\Resource\resource.h" />
+    <ClInclude Include="Src\Smudging\SmudgingState.h" />
+    <ClInclude Include="Src\Smudging\SmudgingSubMenu.h" />
+    <ClInclude Include="Src\Stamping\StampPositionState.h" />
+    <ClInclude Include="Src\Stamping\StampSizeState.h" />
+    <ClInclude Include="Src\Stamping\StampState.h" />
+    <ClInclude Include="Src\Stamping\StampSubMenu.h" />
+    <ClInclude Include="Src\Stamping\StampSubState.h" />
+    <ClInclude Include="Src\Thickness\ThicknessControl.h" />
+    <ClInclude Include="Src\Thickness\ThicknessPanel.h" />
+    <ClInclude Include="Src\Thickness\ThicknessSizeWindow.h" />
+    <ClInclude Include="Src\Window\ColourWindow.h" />
+    <ClInclude Include="Src\Window\Definitions.h" />
+    <ClInclude Include="Src\Window\DrawingWindow.h" />
+    <ClInclude Include="Src\Window\GeneralToolMenu.h" />
+    <ClInclude Include="Src\Window\HoverWindow.h" />
+    <ClInclude Include="Src\Window\LetterWindow.h" />
+    <ClInclude Include="Src\Window\MainWindow.h" />
+    <ClInclude Include="Src\Window\SpecialToolMenu.h" />
+    <ClInclude Include="Src\Writing\LetterSizeWindow.h" />
+    <ClInclude Include="Src\Writing\LetterState.h" />
+    <ClInclude Include="Src\Writing\LetterSubMenu.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SimpleDraw.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\AirBrushing\AirbrushingState.cpp" />
+    <ClCompile Include="Src\AirBrushing\AirbrushingSubMenu.cpp" />
+    <ClCompile Include="Src\AirBrushing\AirbrushSizeWindow.cpp" />
+    <ClCompile Include="Src\Button\ColourButton.cpp" />
+    <ClCompile Include="Src\Button\FontButton.cpp" />
+    <ClCompile Include="Src\Button\HoverButton.cpp" />
+    <ClCompile Include="Src\Custom\ButtonBarTemplate.cpp" />
+    <ClCompile Include="Src\Custom\FileControl.cpp" />
+    <ClCompile Include="Src\Custom\FontButtonBar.cpp" />
+    <ClCompile Include="Src\Custom\HoverButtonBar.cpp" />
+    <ClCompile Include="Src\Custom\PercentageController.cpp" />
+    <ClCompile Include="Src\Custom\SizeBar.cpp" />
+    <ClCompile Include="Src\Custom\SizeWindow.cpp" />
+    <ClCompile Include="Src\Custom\UserButtonBar.cpp" />
+    <ClCompile Include="Src\Dialog\FileDialog.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="Src\DrawingState\DrawingState.cpp" />
+    <ClCompile Include="Src\Drawing\DrawingSubMenu.cpp" />
+    <ClCompile Include="Src\Drawing\FreeDrawingState.cpp" />
+    <ClCompile Include="Src\Filling\FillState.cpp" />
+    <ClCompile Include="Src\Filling\FillSubMenu.cpp" />
+    <ClCompile Include="Src\General\Bitmap.cpp" />
+    <ClCompile Include="Src\General\Controller.cpp" />
+    <ClCompile Include="Src\General\Font.cpp" />
+    <ClCompile Include="Src\General\General.cpp" />
+    <ClCompile Include="Src\General\IniProfile.cpp" />
+    <ClCompile Include="Src\General\Observer.cpp" />
+    <ClCompile Include="Src\General\Profile.cpp" />
+    <ClCompile Include="Src\General\RectUtilities.cpp" />
+    <ClCompile Include="Src\General\SimpleMain.cpp" />
+    <ClCompile Include="Src\General\Subject.cpp" />
+    <ClCompile Include="Src\Smudging\SmudgingState.cpp" />
+    <ClCompile Include="Src\Smudging\SmudgingSubMenu.cpp" />
+    <ClCompile Include="Src\Stamping\StampPositionState.cpp" />
+    <ClCompile Include="Src\Stamping\StampSizeState.cpp" />
+    <ClCompile Include="Src\Stamping\StampState.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="Src\Stamping\StampSubMenu.cpp" />
+    <ClCompile Include="Src\Stamping\StampSubState.cpp" />
+    <ClCompile Include="Src\Thickness\ThicknessControl.cpp" />
+    <ClCompile Include="Src\Thickness\ThicknessPanel.cpp" />
+    <ClCompile Include="Src\Thickness\ThicknessSizeWindow.cpp" />
+    <ClCompile Include="Src\Window\ColourWindow.cpp" />
+    <ClCompile Include="Src\Window\DrawingWindow.cpp" />
+    <ClCompile Include="Src\Window\GeneralToolMenu.cpp" />
+    <ClCompile Include="Src\Window\HoverWindow.cpp" />
+    <ClCompile Include="Src\Window\LetterWindow.cpp" />
+    <ClCompile Include="Src\Window\MainWindow.cpp" />
+    <ClCompile Include="Src\Window\SpecialToolMenu.cpp" />
+    <ClCompile Include="Src\Writing\LetterSizeWindow.cpp" />
+    <ClCompile Include="Src\Writing\LetterState.cpp" />
+    <ClCompile Include="Src\Writing\LetterSubMenu.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MijnWindows\MijnWindows.vcxproj">
+      <Project>{78e71783-b7de-4c62-983b-e76ddc13b954}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
