@@ -13,7 +13,7 @@ class ThicknessButton : public ColourButton
 {
 public:
                               ThicknessButton(Window * aParent, HINSTANCE hInstance,
-                                              const std::tstring & aName,
+                                              const std::string & aName,
                                               Button::BUTTON_STRATEGY aStrategy);
 
   virtual void                SetThickness(int aThickness);
@@ -34,7 +34,7 @@ class ThicknessPanel : public RadioButtonBar, public ThicknessControl
 {
 public:
                               ThicknessPanel(::Window * aParent, HINSTANCE hInstance,
-                                             const std::tstring & aName = _T("ThicknessPanel"));
+                                             const std::string & aName = "ThicknessPanel");
                               ~ThicknessPanel();
 
   virtual int                 GetThickness() const;

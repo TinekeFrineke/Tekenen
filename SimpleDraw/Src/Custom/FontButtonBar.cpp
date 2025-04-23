@@ -36,7 +36,7 @@ void FontButtonBar::FillButtons()
     if (i + mCurrentIndex < mFontNames.size())
       GetButtons()[i]->SetFont(Font(mFontNames[i + mCurrentIndex], 24));
     else
-      GetButtons()[i]->SetFont(Font(_T(""), 0));
+      GetButtons()[i]->SetFont(Font("", 0));
 
     InvalidateRect(GetButtons()[i]->GetHwnd(), NULL, false);
   }
@@ -107,7 +107,7 @@ LRESULT FontButtonBar::WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam)
 }
 
 
-void FontButtonBar::SetFontNames(const std::vector<std::tstring> & aFontNames)
+void FontButtonBar::SetFontNames(const std::vector<std::string> & aFontNames)
 {
   mFontNames = aFontNames;
   mCurrentIndex = 0;

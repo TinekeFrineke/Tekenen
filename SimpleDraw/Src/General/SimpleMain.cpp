@@ -1,6 +1,5 @@
 #include <windows.h>
 
-#include <tchar.h>
 
 #include "Controller.h"
 #include "Window/MainWindow.h"

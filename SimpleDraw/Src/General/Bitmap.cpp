@@ -1,6 +1,5 @@
 #include "Bitmap.h"
 
-#include <tchar.h>
 
 
 PBITMAPINFO CreateBitmapInfoStruct(HBITMAP hBmp)
@@ -11,7 +10,7 @@ PBITMAPINFO CreateBitmapInfoStruct(HBITMAP hBmp)
 
   // Retrieve the bitmap color format, width, and height.
   if (!GetObject(hBmp, sizeof(BITMAP), (LPSTR)&bmp))
-    ::MessageBox(0, _T("GetObject"), _T("ERROR"), MB_OK);
+    ::MessageBox(0, "GetObject", "ERROR", MB_OK);
 
   // Convert the color format to a count of bits.
   cClrBits = (WORD)(bmp.bmPlanes * bmp.bmBitsPixel);
@@ -68,7 +67,7 @@ PBITMAPINFO CreateBitmapInfoStruct(HBITMAP hBmp)
 }
 
 
-bool CreateBMPFile(LPTSTR pszFile, PBITMAPINFO pbi,
+bool CreateBMPFile(LPCTSTR pszFile, PBITMAPINFO pbi,
                    HBITMAP hBMP, HDC hDC)
 {
   HANDLE hf;                  // file handle
@@ -85,7 +84,7 @@ bool CreateBMPFile(LPTSTR pszFile, PBITMAPINFO pbi,
 
   if (!lpBits)
   {
-    ::MessageBox(0, _T("GlobalAlloc"), _T("ERROR"), MB_OK);
+    ::MessageBox(0, "GlobalAlloc", "ERROR", MB_OK);
     return false;
   }
 
@@ -94,7 +93,7 @@ bool CreateBMPFile(LPTSTR pszFile, PBITMAPINFO pbi,
   if (!GetDIBits(hDC, hBMP, 0, (WORD) pbih->biHeight, lpBits, pbi,
       DIB_RGB_COLORS))
   {
-    ::MessageBox(0, _T("GetDIBits"), _T("ERROR"), MB_OK);
+    ::MessageBox(0, "GetDIBits", "ERROR", MB_OK);
     GlobalFree((HGLOBAL)lpBits);
     return false;
   }
@@ -109,7 +108,7 @@ bool CreateBMPFile(LPTSTR pszFile, PBITMAPINFO pbi,
                   (HANDLE) NULL);
   if (hf == INVALID_HANDLE_VALUE)
   {
-    ::MessageBox(0, _T("CreateFile"), _T("ERROR"), MB_OK);
+    ::MessageBox(0, "CreateFile", "ERROR", MB_OK);
     GlobalFree((HGLOBAL)lpBits);
     return false;
   }
@@ -131,7 +130,7 @@ bool CreateBMPFile(LPTSTR pszFile, PBITMAPINFO pbi,
   if (!WriteFile(hf, (LPVOID) &hdr, sizeof(BITMAPFILEHEADER),
       (LPDWORD) &dwTmp,  NULL))
   {
-    ::MessageBox(0, _T("WriteFile"), _T("ERROR"), MB_OK);
+    ::MessageBox(0, "WriteFile", "ERROR", MB_OK);
     GlobalFree((HGLOBAL)lpBits);
     return false;
   }
@@ -141,7 +140,7 @@ bool CreateBMPFile(LPTSTR pszFile, PBITMAPINFO pbi,
                 + pbih->biClrUsed * sizeof (RGBQUAD),
                 (LPDWORD) &dwTmp, ( NULL)))
   {
-    ::MessageBox(0, _T("WriteFile"), _T("ERROR"), MB_OK);
+    ::MessageBox(0, "WriteFile", "ERROR", MB_OK);
     GlobalFree((HGLOBAL)lpBits);
     return false;
   }
@@ -151,7 +150,7 @@ bool CreateBMPFile(LPTSTR pszFile, PBITMAPINFO pbi,
   hp = lpBits;
   if (!WriteFile(hf, (LPSTR) hp, (int) cb, (LPDWORD) &dwTmp,NULL))
   {
-    ::MessageBox(0, _T("WriteFile"), _T("ERROR"), MB_OK);
+    ::MessageBox(0, "WriteFile", "ERROR", MB_OK);
     GlobalFree((HGLOBAL)lpBits);
     return false;
   }
@@ -159,7 +158,7 @@ bool CreateBMPFile(LPTSTR pszFile, PBITMAPINFO pbi,
   // Close the .BMP file.
   if (!CloseHandle(hf))
   {
-    ::MessageBox(0, _T("CloseHandle"), _T("ERROR"), MB_OK);
+    ::MessageBox(0, "CloseHandle", "ERROR", MB_OK);
     GlobalFree((HGLOBAL)lpBits);
     return false;
   }
@@ -169,14 +168,13 @@ bool CreateBMPFile(LPTSTR pszFile, PBITMAPINFO pbi,
   return true;
 }
 
-bool SaveBitmap(HDC hDC, HBITMAP hBitmap, const std::wstring & aFilename)
+bool SaveBitmap(HDC hDC, HBITMAP hBitmap, const std::string & aFilename)
 {
-  TCHAR * pName = _wcsdup(aFilename.c_str());
   BITMAPINFO * pbitmapinfo = CreateBitmapInfoStruct(hBitmap);
   if (pbitmapinfo == NULL)
     return false;
 
-  bool bResult = CreateBMPFile(pName, pbitmapinfo, hBitmap, hDC);
+  bool bResult = CreateBMPFile(aFilename.c_str(), pbitmapinfo, hBitmap, hDC);
 
   LocalFree(pbitmapinfo);
 

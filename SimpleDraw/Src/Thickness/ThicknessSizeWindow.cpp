@@ -8,7 +8,7 @@
 
 ThicknessPreview::ThicknessPreview(Window *aParent, HINSTANCE anInstance,
                                    DrawingAttributes & anAttributes)
-: Preview     (aParent, anInstance, _T("ThicknessPreview"), WS_CHILD | WS_BORDER),
+: Preview     (aParent, anInstance, "ThicknessPreview", WS_CHILD | WS_BORDER),
   mAttributes (anAttributes),
   mPen        (CreatePen(PS_SOLID, mAttributes.mThickness, mAttributes.mColour))
 {

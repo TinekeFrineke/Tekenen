@@ -7,8 +7,8 @@
 HoverButton::HoverButton(Window * aParent, HINSTANCE hInstance,
                          StampState & aState,
                          int aWidth, int aHeight,
-                         const std::tstring & aFilename)
-: Button        (aParent, hInstance, aFilename, BS_CustomButton),
+                         const std::string & aFilename)
+: Button        (aParent, hInstance, aFilename, BUTTON_STRATEGY::CustomButton),
   mState        (aState),
   mBitmapWidth  (aWidth),
   mBitmapHeight (aHeight),
@@ -23,7 +23,7 @@ HoverButton::~HoverButton()
 }
 
 
-void HoverButton::SetFile(const std::tstring & aFile)
+void HoverButton::SetFile(const std::string & aFile)
 {
   if (mHBitmap != NULL)
     DeleteObject(mHBitmap);

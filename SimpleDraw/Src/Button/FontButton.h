@@ -13,7 +13,7 @@ class FontButton : public Button
 {
 public:
                           FontButton(Window * aParent, HINSTANCE hInstance,
-                                     const std::tstring & aName = _T("FontButton"));
+                                     const std::string & aName = "FontButton");
                           ~FontButton();
 
   bool                    SetFont(const Font & aFont);

@@ -2,3 +2,8 @@
 /Backup/
 /MijnWindows/test/
 /Tekenen20080419/
+*/x86/
+*/Debug/
+*.vcxproj.*
+/SimpleDraw/SimpleDraw.vcxproj.user
+Thumbs.db

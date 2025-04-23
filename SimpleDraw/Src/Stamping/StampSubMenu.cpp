@@ -32,15 +32,15 @@ void StampSubMenu::GetFiles()
 {
   mFiles.clear();
   WIN32_FIND_DATA finddata;
-  HANDLE hFind = FindFirstFile((Profile::GetInstance().GetStampDirectory() + _T("\\*.bmp")).c_str(), &finddata);
+  HANDLE hFind = FindFirstFile((Profile::GetInstance().GetStampDirectory() + "\\*.bmp").c_str(), &finddata);
   if (hFind == NULL)
     return;
 
   if (finddata.dwFileAttributes != FILE_ATTRIBUTE_DIRECTORY)
-    mFiles.push_back(Profile::GetInstance().GetStampDirectory() + _T("\\") + finddata.cFileName);
+    mFiles.push_back(Profile::GetInstance().GetStampDirectory() + "\\" + finddata.cFileName);
   while (FindNextFile(hFind, &finddata) != FALSE)
     if (finddata.dwFileAttributes != FILE_ATTRIBUTE_DIRECTORY)
-      mFiles.push_back(Profile::GetInstance().GetStampDirectory() + _T("\\") + finddata.cFileName);
+      mFiles.push_back(Profile::GetInstance().GetStampDirectory() + "\\" + finddata.cFileName);
 
   FindClose(hFind);
 

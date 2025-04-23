@@ -2,7 +2,7 @@
 
 
 ThicknessButton::ThicknessButton(Window * aParent, HINSTANCE hInstance,
-                                 const std::tstring & aName,
+                                 const std::string & aName,
                                  Button::BUTTON_STRATEGY aStrategy)
 : ColourButton(aParent, hInstance, aName, aStrategy),
   mPen        (NULL)
@@ -59,12 +59,12 @@ LRESULT ThicknessButton::OnPaint(HDC hDC, const RECT & aRect)
 
 
 ThicknessPanel::ThicknessPanel(Window * aParent, HINSTANCE hInstance,
-                               const std::tstring & aName)
-: RadioButtonBar(aParent, hInstance, aName, ButtonBar::LS_VerticalFit)
+                               const std::string & aName)
+: RadioButtonBar(aParent, hInstance, aName, ButtonBar::LAYOUT_STRATEGY::VerticalFit)
 {
   for (int i = 0; i < 6; ++i)
   {
-    ThicknessButton * button = new ThicknessButton(this, hInstance, _T("ThicknessButton"), Button::BS_ToggleButton);
+    ThicknessButton * button = new ThicknessButton(this, hInstance, "ThicknessButton", Button::BUTTON_STRATEGY::ToggleButton);
     button->SetColour(RGB(0x00, 0xff, 0xff));
     button->SetThickness(i);
     AddButton(button, i);

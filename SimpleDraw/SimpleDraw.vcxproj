@@ -19,12 +19,12 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -56,7 +56,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>$(SolutionDir)MijnWindows\Source\;$(ProjectDir)\Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;UNICODE;_UNICODE;CRTDBG_MAP_ALLOC;PRINT_MESSAGES=0;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NOMINMAX;_DEBUG;_WINDOWS;CRTDBG_MAP_ALLOC;PRINT_MESSAGES=0;_CRT_SECURE_NO_WARNINGS;_CRT_NON_CONFORMING_SWPRINTFS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>false</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -73,7 +73,7 @@
       <AdditionalIncludeDirectories>C:\Projects\msvc\Tekenen\SimpleDraw\Src\General;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>D:\Projects\VC2019\Tekenen\MijnWindows\Debug\MijnWindows.lib;Msimg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)MijnWindows\$(PlatformTarget)\$(Configuration)\MijnWindows.lib;Msimg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)SimpleDraw.exe</OutputFile>
       <AdditionalLibraryDirectories>C:\Projects\msvc\Tekenen\MijnWindows\Output\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -88,7 +88,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <AdditionalIncludeDirectories>$(SolutionDir)MijnWindows\Source\;$(ProjectDir)\Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;UNICODE;_UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NOMINMAX;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <PrecompiledHeader />
@@ -152,7 +152,6 @@
     <None Include="Src\Resource\emmer.cur" />
     <None Include="Src\Resource\potlood.cur" />
     <None Include="Src\Resource\potlood2.cur" />
-    <None Include="Src\Resource\SimpleDraw.aps" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Src\Resource\fonts.txt" />
@@ -210,9 +209,6 @@
     <ClInclude Include="Src\Writing\LetterSizeWindow.h" />
     <ClInclude Include="Src\Writing\LetterState.h" />
     <ClInclude Include="Src\Writing\LetterSubMenu.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="SimpleDraw.rc" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\AirBrushing\AirbrushingState.cpp" />

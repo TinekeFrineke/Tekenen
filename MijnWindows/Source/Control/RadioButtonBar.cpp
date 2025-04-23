@@ -2,58 +2,62 @@
 
 #include "Button/Button.h"
 
-RadioButtonBar::RadioButtonBar(Window * aParent, HINSTANCE hInstance,
-                               const std::tstring & aName,
+RadioButtonBar::RadioButtonBar(Window* aParent, HINSTANCE hInstance,
+                               const std::string& aName,
                                LAYOUT_STRATEGY aStrategy)
-: ButtonBar(aParent, hInstance, aName, aStrategy),
-  mSelected(NULL)
+    : ButtonBar(aParent, hInstance, aName, aStrategy),
+    mSelected(NULL)
 {
 }
 
-
-LRESULT RadioButtonBar::OnButtonClick(Button * aButton)
+void RadioButtonBar::AddButton(Button* aButton, int id)
 {
-  SelectButton(aButton);
-  return ButtonBar::OnButtonClick(aButton);
+    ButtonBar::AddButton(aButton, id);
+    mButtonMap[aButton] = id;
+}
+
+
+LRESULT RadioButtonBar::OnButtonClick(Button* aButton)
+{
+    SelectButton(aButton);
+    return ButtonBar::OnButtonClick(aButton);
 }
 
 
 void RadioButtonBar::SelectButton(int anID)
 {
-  for (std::map<Button *, int>::const_iterator miter = GetButtonMap().begin();
-       miter != GetButtonMap().end();
-       ++miter)
-  {
-    if (miter->second == anID)
+    for (auto button : GetButtonMap())
     {
-      SelectButton(miter->first);
-      break;
+        if (button.second == anID)
+        {
+            SelectButton(button.first);
+            break;
+        }
     }
-  }
 }
 
 
-void RadioButtonBar::SelectButton(Button * aButton)
+void RadioButtonBar::SelectButton(Button* aButton)
 {
-  if (mSelected != aButton) {
-    if (mSelected != NULL)
-      mSelected->SetPressed(false);
+    if (mSelected != aButton) {
+        if (mSelected != NULL)
+            mSelected->SetPressed(false);
 
-    mSelected = aButton;
-    if (mSelected != NULL)
-      mSelected->SetPressed(true);
-  }
+        mSelected = aButton;
+        if (mSelected != NULL)
+            mSelected->SetPressed(true);
+    }
 }
 
 
 int RadioButtonBar::GetSelectedID() const
 {
-  if (GetSelectedButton() == NULL)
-    return -1;
+    if (GetSelectedButton() == NULL)
+        return -1;
 
-  std::map<Button *, int>::const_iterator citer = GetButtonMap().find(const_cast<Button *>(GetSelectedButton()));
-  if (citer == GetButtonMap().end())
-    return -1;
+    std::map<Button*, int>::const_iterator citer = GetButtonMap().find(const_cast<Button*>(GetSelectedButton()));
+    if (citer == GetButtonMap().end())
+        return -1;
 
-  return citer->second;
+    return citer->second;
 }

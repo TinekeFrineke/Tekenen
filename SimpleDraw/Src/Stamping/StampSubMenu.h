@@ -14,35 +14,35 @@ class HoverButton;
 class StampState;
 template <class Target> class SizeBar;
 
-class StampSubMenu : public SubMenu, public Observer
+class StampSubMenu: public SubMenu, public Observer
 {
 public:
-                              StampSubMenu(SpecialToolMenu & aMenu, StampState & aState,
-                                           HINSTANCE hInstance, DrawingAttributes &  anAttributes);
-  virtual                     ~StampSubMenu();
+    StampSubMenu(SpecialToolMenu& aMenu, StampState& aState,
+                 HINSTANCE hInstance, DrawingAttributes& anAttributes);
+    virtual                     ~StampSubMenu();
 
-  void                        ScrollLeft();
-  void                        ScrollRight();
+    void                        ScrollLeft();
+    void                        ScrollRight();
 
 protected:
-  virtual LRESULT             LayoutWindow(const RECT & aClientRect);
+    virtual LRESULT             LayoutWindow(const RECT& aClientRect);
 
-  // Observer methods
-  virtual void                Update(Subject * aSubject);
-  virtual void                Destroyed(Subject * aSubject);
+    // Observer methods
+    virtual void                Update(Subject* aSubject);
+    virtual void                Destroyed(Subject* aSubject);
 
 private:
-  void                        GetFiles();
+    void                        GetFiles();
 
-  StampState &                mState;
-  HINSTANCE                   mHInstance;
+    StampState& mState;
+    HINSTANCE                   mHInstance;
 
-  HoverButtonBar *            mButtonBar;
-  std::vector<std::tstring>   mFiles;
-  std::vector<StampSubMenu *> mCells;
+    HoverButtonBar* mButtonBar;
+    std::vector<std::string>   mFiles;
+    std::vector<StampSubMenu*> mCells;
 
-  static const int            mNumberOfRows = 1;
-  static const int            mNumberOfColumns = 8;
+    static const int            mNumberOfRows = 1;
+    static const int            mNumberOfColumns = 8;
 };
 
 

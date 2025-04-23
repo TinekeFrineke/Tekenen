@@ -9,34 +9,34 @@
 class HoverWindow;
 class StampState;
 
-class HoverButton : public Button
+class HoverButton: public Button
 {
 public:
-                          HoverButton(Window * aParent, HINSTANCE hInstance,
-                                      StampState & mState,
-                                      int aWidth, int aHeight,
-                                      const std::tstring & aName = _T("HoverButton"));
-                          ~HoverButton();
+    HoverButton(Window* aParent, HINSTANCE hInstance,
+                StampState& mState,
+                int aWidth, int aHeight,
+                const std::string& aName = "HoverButton");
+    ~HoverButton();
 
-  void                    SetFile(const std::tstring & aFile);
-  HoverWindow *           CreateImage();
+    void                    SetFile(const std::string& aFile);
+    HoverWindow* CreateImage();
 
 protected:
 
-  LRESULT                 OnWindowPosChanged(const WINDOWPOS & oPos);
-  LRESULT                 OnPaint();
+    LRESULT                 OnWindowPosChanged(const WINDOWPOS& oPos);
+    LRESULT                 OnPaint();
 
 private:
-  HoverButton &           operator=(const HoverButton &);
-                          HoverButton(const HoverButton &);
+    HoverButton& operator=(const HoverButton&) = delete;
+    HoverButton(const HoverButton&) = delete;
 
-  int                     mButtonWidth;
-  int                     mButtonHeight;
-  int                     mBitmapWidth;
-  int                     mBitmapHeight;
-  float                   mScale;
-  HBITMAP                 mHBitmap;
-  StampState &            mState;
+    int                     mButtonWidth;
+    int                     mButtonHeight;
+    int                     mBitmapWidth;
+    int                     mBitmapHeight;
+    float                   mScale;
+    HBITMAP                 mHBitmap;
+    StampState& mState;
 };
 
 

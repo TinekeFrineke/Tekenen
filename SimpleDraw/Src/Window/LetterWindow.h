@@ -9,39 +9,35 @@
 class DrawingAttributes;
 class DrawingWindow;
 
-class LetterWindow : public GenericWindow
+class LetterWindow: public GenericWindow
 {
 public:
-                          LetterWindow(DrawingWindow & aParent, HINSTANCE hInstance, const Font & aFont,
-                                       const DrawingAttributes & anAttributes);
-                          ~LetterWindow();
+    LetterWindow(DrawingWindow& aParent, HINSTANCE hInstance, const Font& aFont,
+                 const DrawingAttributes& anAttributes);
+    ~LetterWindow();
 
-  virtual LRESULT         WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
+    virtual LRESULT         WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
 
-  void                    SetFont(const Font & aFont);
-  void                    Finalize();
+    void                    SetFont(const Font& aFont);
+    void                    Finalize();
 
 protected:
-  LRESULT                 OnPaint();
-  LRESULT                 OnChar(char c);
+    LRESULT                 OnPaint();
+    LRESULT                 OnChar(char c);
 
-  void                    UpdateWindowSize();
-  void                    DrawText(HDC aDc);
+    void                    UpdateWindowSize();
+    void                    DrawText(HDC aDc);
 
 private:
-  // Prohibit copying
-                          LetterWindow(const LetterWindow &);
-  // Prohibit assignment
-  LetterWindow &          operator=(const LetterWindow &);
+    LetterWindow(const LetterWindow&) = delete;
+    LetterWindow& operator=(const LetterWindow&) = delete;
 
-  DrawingWindow &         mWindow;
-  const DrawingAttributes &
-                          mAttributes;
+    DrawingWindow& mWindow;
+    const DrawingAttributes& mAttributes;
 
-  //HCURSOR                 mOldCursor;
-  HWND                    mOldFocusWnd;
-  Font                    mFont;
-  std::tstring            mText;
+    HWND                    mOldFocusWnd;
+    Font                    mFont;
+    std::string            mText;
 };
 
 

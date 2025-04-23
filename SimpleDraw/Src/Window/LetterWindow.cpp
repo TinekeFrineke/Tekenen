@@ -8,7 +8,7 @@
 
 LetterWindow::LetterWindow(DrawingWindow & aParent, HINSTANCE hInstance, const Font & aFont,
                            const DrawingAttributes & anAttributes)
-: GenericWindow (&aParent, hInstance, _T("LetterWindow"), WS_CHILD, WS_EX_TRANSPARENT),
+: GenericWindow (&aParent, hInstance, "LetterWindow", WS_CHILD, WS_EX_TRANSPARENT),
   mWindow       (aParent),
   mAttributes   (anAttributes),
   mFont         (aFont)
@@ -55,7 +55,7 @@ void LetterWindow::Finalize()
   HFONT hFont = mFont.GetHandle();
   if (hFont == 0)
   {
-    ::MessageBox(GetHwnd(), (_T("Error creating font ") + mFont.GetName()).c_str(), _T("ERROR"), MB_OK);
+    ::MessageBox(GetHwnd(), ("Error creating font " + mFont.GetName()).c_str(), "ERROR", MB_OK);
     return;
   }
 
@@ -86,7 +86,7 @@ LRESULT LetterWindow::OnPaint()
   HDC dc = BeginPaint(GetHwnd(), &ps);
 
   if (mFont.GetHandle() == NULL)
-    ::MessageBox(NULL, _T("Ongeldige tekenset"), _T("FOUT"), MB_OK);
+    ::MessageBox(NULL, "Ongeldige tekenset", "FOUT", MB_OK);
 
   HGDIOBJ oldfont = mFont.GetHandle() ? SelectObject(dc, mFont.GetHandle()) : 0;
 
@@ -167,7 +167,7 @@ LRESULT LetterWindow::OnChar(char c)
         return GetParent()->PostMessage(WinDefs::WM_LETTERWINDOW_READY, 0, (LPARAM)this);
 
     default:
-      mText += wchar_t(c);
+      mText += c;
       break;
   }
 

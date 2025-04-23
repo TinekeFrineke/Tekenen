@@ -1,21 +1,19 @@
 #include "FrameWindow.h"
 
 #include <stdio.h>
-#include <tchar.h>
 
-//#include "resource.h"
 
 template<>
 bool MijnWindow<FrameWindow>::mRegistered = false;
 
 FrameWindow::FrameWindow(Window * aParent, HINSTANCE hInstance,
-                         const std::tstring & aName, DWORD aStyle)
+                         const std::string & aName, DWORD aStyle)
 : MijnWindow<FrameWindow> (aParent, hInstance, aName),
   mColour                 (0xffffff)
 {
   aStyle &= ~WS_POPUP;
   aStyle |= WS_CHILD;
-  Create(GetClassName(), _T("FrameWindow"), aStyle);
+  Create(GetClassName(), "FrameWindow", aStyle);
   Show(SW_SHOW);
 }
 

@@ -11,60 +11,47 @@ class DrawingAttributes;
 class DrawingState;
 class SpecialToolMenu;
 
-class DrawingWindow : public MijnWindow<DrawingWindow>
+class DrawingWindow: public MijnWindow<DrawingWindow>
 {
 public:
-                          DrawingWindow(Window * aParent, SpecialToolMenu & aMenu,
-                                        DrawingAttributes & anAttributes,
-                                        HINSTANCE hInstance, const std::tstring & aName = _T("DrawingWindow"));
-                          ~DrawingWindow();
+    DrawingWindow(Window* aParent, SpecialToolMenu& aMenu,
+                  DrawingAttributes& anAttributes,
+                  HINSTANCE hInstance, const std::string& aName = "DrawingWindow");
+    ~DrawingWindow();
 
-  LRESULT                 WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
+    LRESULT                 WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
+    HDC                     GetHDC();
+    HBITMAP                 GetBitmap() { return mHBitMap; }
+    void                    SetBitmap(HBITMAP hBitmap);
+    void                    ClearWindow();
+    void                    SetState(Tekenen::DRAW_STATE aState);
 
-  HDC                     GetHDC();
-
-  HBITMAP                 GetBitmap() { return mHBitMap; }
-
-  void                    SetBitmap(HBITMAP hBitmap);
-
-  void                    ClearWindow();
-
-  void                    SetState(Tekenen::DRAW_STATE aState);
-
-  static bool             RegisterClass(HINSTANCE hInstance);
+    static bool             RegisterClass(HINSTANCE hInstance);
 
 protected:
-  static TCHAR *          GetClassName() { return _T("MijnDrawingWindow"); }
+    static char* GetClassName() { return const_cast<char*>("MijnDrawingWindow"); }
 
 private:
-                          DrawingWindow(const DrawingWindow &);
-  DrawingWindow &         operator=(const DrawingWindow &);
+    DrawingWindow(const DrawingWindow&) = delete;
+    DrawingWindow& operator=(const DrawingWindow&) = delete;
 
-  // handle paint request
-  LRESULT                 OnPaint();
+    // handle paint request
+    LRESULT                 OnPaint();
 
-  LRESULT                 OnChangeSize(int iWidth, int iHeight);
+    LRESULT                 OnChangeSize(int iWidth, int iHeight);
 
-  LRESULT                 OnWindowPosChanged(const WINDOWPOS & oPos);
+    LRESULT                 OnWindowPosChanged(const WINDOWPOS& oPos);
 
-  // Screen DC
-  HDC                     mHScreenDC;
-  // Memory DC to print upon
-  HDC                     mHMemoryDC;
-  //
-  HBITMAP                 mHBitMap;
-  //
-  HCURSOR                 mCursor;
-  //
-  bool                    mDrawing;
-  // The drawing state
-  Tekenen::DRAW_STATE     mDrawingState;
-  ///
-  DrawingState *          mState;
-  // 
-  DrawingAttributes &     mAttributes;
-  //
-  SpecialToolMenu &       mSpecialToolMenu;
+    HDC                     mHScreenDC;
+    HDC                     mHMemoryDC;
+    HBITMAP                 mHBitMap;
+    HCURSOR                 mCursor;
+    bool                    mDrawing;
+    Tekenen::DRAW_STATE     mDrawingState;
+
+    DrawingState* mState;
+    DrawingAttributes& mAttributes;
+    SpecialToolMenu& mSpecialToolMenu;
 };
 
 

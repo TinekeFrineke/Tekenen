@@ -8,7 +8,7 @@ bool MijnWindow<Dialog>::mRegistered = false;
 
 
 Dialog::Dialog(Window * aParent, HINSTANCE hInstance,
-               const std::tstring & aName, DWORD style)
+               const std::string & aName, DWORD style)
 : MijnWindow<Dialog>(aParent, hInstance, aName),
   mResult           (-1),
   mReady            (false)

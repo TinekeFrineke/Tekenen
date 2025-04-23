@@ -5,27 +5,28 @@
 #include "Profile.h"
 
 
-class IniUserProfile : public UserProfile
+class IniUserProfile: public UserProfile
 {
 public:
-                      IniUserProfile(const std::tstring & aName)
-                      : UserProfile(aName) {}
+    IniUserProfile(const std::string& aName)
+        : UserProfile(aName) {
+    }
 
-  virtual void        SetBitmap(const std::tstring & aName) { UserProfile::SetBitmap(aName); }
-  virtual void        SetShowFilenames(bool aShow)          { UserProfile::SetShowFilenames(aShow); }
+    virtual void        SetBitmap(const std::string& aName) { UserProfile::SetBitmap(aName); }
+    virtual void        SetShowFilenames(bool aShow) { UserProfile::SetShowFilenames(aShow); }
 
 };
 
-class IniProfile : public Profile
+class IniProfile: public Profile
 {
 public:
-                      IniProfile(const std::tstring & anIniFile);
-                      ~IniProfile();
+    IniProfile(const std::string& anIniFile);
+    ~IniProfile();
 
 private:
-  void                ReadUser(const std::tstring & aUser);
+    void                ReadUser(const std::string& aUser);
 
-  std::tstring        mFileName;
+    std::string        mFileName;
 };
 
 

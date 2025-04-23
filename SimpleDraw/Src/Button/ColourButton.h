@@ -8,7 +8,7 @@ class ColourButton : public Button
 {
 public:
                           ColourButton(Window * aParent, HINSTANCE hInstance,
-                                       const std::tstring & aName, BUTTON_STRATEGY aStrategy);
+                                       const std::string & aName, BUTTON_STRATEGY aStrategy);
 
   void                    Create(const RECT & oRect, COLORREF aColour);
 

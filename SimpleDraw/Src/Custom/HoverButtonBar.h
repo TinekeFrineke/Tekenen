@@ -12,43 +12,44 @@ class SingleBitmapButton;
 class StampState;
 
 
-class HoverButtonBar : public FrameWindow
+class HoverButtonBar: public FrameWindow
 {
 public:
-                              HoverButtonBar(Window * aParent, HINSTANCE hInstance,
-                                             StampState & aState,
-                                             int aRows, int aColumns);
+    HoverButtonBar(Window* aParent, HINSTANCE hInstance,
+                   StampState& aState,
+                   int aRows, int aColumns);
 
-  void                        SetFiles(const std::vector<std::tstring> & aFiles);
+    void                        SetFiles(const std::vector<std::
+                                         string>& aFiles);
 
-  void                        ScrollBack();
-  void                        ScrollForward();
+    void                        ScrollBack();
+    void                        ScrollForward();
 
 protected:
-  virtual LRESULT             WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
+    virtual LRESULT             WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
 
-  void                        FillButtons();
+    void                        FillButtons();
 
-  LRESULT                     OnButtonClicked(Button * aButton);
-  LRESULT                     OnWindowPosChanged(const WINDOWPOS & oPos);
+    LRESULT                     OnButtonClicked(Button* aButton);
+    LRESULT                     OnWindowPosChanged(const WINDOWPOS& oPos);
 
 private:
-                              HoverButtonBar(const HoverButtonBar &);
-  HoverButtonBar &            operator=(const HoverButtonBar &);
+    HoverButtonBar(const HoverButtonBar&);
+    HoverButtonBar& operator=(const HoverButtonBar&);
 
-  void                        AddButton(ButtonBar * aButtonBar, HoverButton * aButton);
+    void                        AddButton(ButtonBar* aButtonBar, HoverButton* aButton);
 
-  StampState &                mState;
-  std::vector<HoverButton *>  mButtons;
-  std::vector<ButtonBar *>    mButtonBars;
-  
-  SingleBitmapButton *        mBack;
-  SingleBitmapButton *        mForward;
+    StampState& mState;
+    std::vector<HoverButton*>  mButtons;
+    std::vector<ButtonBar*>    mButtonBars;
 
-  std::vector<std::tstring>   mFiles;
-  int                         mCurrentIndex;
-  int                         mRows;
-  int                         mColumns;
+    SingleBitmapButton* mBack;
+    SingleBitmapButton* mForward;
+
+    std::vector<std::string>   mFiles;
+    int                         mCurrentIndex;
+    int                         mRows;
+    int                         mColumns;
 };
 
 

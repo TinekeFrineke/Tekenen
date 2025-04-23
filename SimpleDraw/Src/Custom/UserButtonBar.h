@@ -15,7 +15,7 @@ class UserButtonBar : public RadioButtonBar
 {
 public:
                           UserButtonBar(Window * aParent, HINSTANCE hInstance,
-                                        const std::tstring & aName = _T("UserButtonBar"));
+                                        const std::string & aName = "UserButtonBar");
 
   void                    Update();
 

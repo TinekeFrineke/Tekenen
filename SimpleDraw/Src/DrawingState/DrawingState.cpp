@@ -1,7 +1,6 @@
 #include "DrawingState.h"
 
 #include <assert.h>
-#include <tchar.h>
 
 #include "General/Controller.h"
 #include "General/RectUtilities.h"

@@ -8,7 +8,7 @@
 
 AirbrushPreview::AirbrushPreview(Window *aParent, HINSTANCE anInstance,
                                  DrawingAttributes & anAttributes)
-: Preview     (aParent, anInstance, _T("AirbrushPreview"), WS_CHILD | WS_BORDER),
+: Preview     (aParent, anInstance, "AirbrushPreview", WS_CHILD | WS_BORDER),
   mAttributes (anAttributes)/*,
   mPen        (CreatePen(PS_SOLID, mAttributes.mThickness, mAttributes.mColour))*/
 {

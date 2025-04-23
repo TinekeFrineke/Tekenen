@@ -9,28 +9,28 @@ class Button;
 class Controller;
 class SingleBitmapButton;
 
-class GeneralToolMenu : public RadioButtonBar
+class GeneralToolMenu: public RadioButtonBar
 {
 public:
-                          GeneralToolMenu(Window * aParent, Controller & aController, HINSTANCE hInstance,
-                                          const std::tstring & aName = _T("GeneralToolMenu"));
-                          ~GeneralToolMenu();
+    GeneralToolMenu(Window* aParent, Controller& aController, HINSTANCE hInstance,
+                    const std::string& aName = "GeneralToolMenu");
+    ~GeneralToolMenu();
 
 protected:
 
 private:
-  virtual LRESULT         OnButtonClick(Button * aButton);
+    virtual LRESULT         OnButtonClick(Button* aButton);
 
-  GeneralToolMenu &       operator=(const GeneralToolMenu &);
-                          GeneralToolMenu(const GeneralToolMenu &);
+    GeneralToolMenu& operator=(const GeneralToolMenu&);
+    GeneralToolMenu(const GeneralToolMenu&);
 
-  SingleBitmapButton *    mDrawButton;
-  SingleBitmapButton *    mStampButton;
-  SingleBitmapButton *    mLetterButton;
-  SingleBitmapButton *    mFillButton;
-  SingleBitmapButton *    mSmudgeButton;
-  SingleBitmapButton *    mAirbrushButton;
-  Controller &            mController;
+    SingleBitmapButton* mDrawButton;
+    SingleBitmapButton* mStampButton;
+    SingleBitmapButton* mLetterButton;
+    SingleBitmapButton* mFillButton;
+    SingleBitmapButton* mSmudgeButton;
+    SingleBitmapButton* mAirbrushButton;
+    Controller& mController;
 };
 
 

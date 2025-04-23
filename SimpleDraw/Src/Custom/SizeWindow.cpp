@@ -11,9 +11,9 @@
 
 
 SizeWindow::SizeWindow(Window * aParent, HINSTANCE anInstance)
-: FrameWindow (aParent, anInstance, _T("SizeWindow")),
-  mPreview    (NULL),
-  mSizeBar    (NULL)
+: FrameWindow (aParent, anInstance, "SizeWindow"),
+  mPreview    (nullptr),
+  mSizeBar    (nullptr)
 {
   mSizeBar = new SizeBar<SizeWindow>(this, anInstance, this);
 }
@@ -24,7 +24,7 @@ void SizeWindow::SetPreview(Preview * aPreview)
   if (mPreview == aPreview)
     return;
 
-  if (mPreview != NULL)
+  if (mPreview != nullptr)
     delete mPreview;
 
   mPreview = aPreview;
@@ -33,7 +33,7 @@ void SizeWindow::SetPreview(Preview * aPreview)
 
 void SizeWindow::Larger()
 {
-  if (mPreview != NULL)
+  if (mPreview != nullptr)
   {
     mPreview->Larger();
     Notify();
@@ -43,7 +43,7 @@ void SizeWindow::Larger()
 
 void SizeWindow::Smaller()
 {
-  if (mPreview != NULL)
+  if (mPreview != nullptr)
   {
     mPreview->Smaller();
     Notify();
@@ -55,8 +55,8 @@ LRESULT SizeWindow::OnWindowPosChanged(const WINDOWPOS & oPos)
 {
   (void)oPos;
 
-  assert(mPreview != NULL);
-  if (mPreview == NULL)
+  assert(mPreview != nullptr);
+  if (mPreview == nullptr)
     return -1;
 
   RECT rect;
@@ -65,10 +65,10 @@ LRESULT SizeWindow::OnWindowPosChanged(const WINDOWPOS & oPos)
   int previewwidth   = ((rect.right - rect.left) * 2) / 3;
   int buttonbarwidth = rect.right - rect.left - previewwidth - 6;
 
-  mPreview->SetWindowPos(NULL, 2, 2,
+  mPreview->SetWindowPos(nullptr, 2, 2,
                          previewwidth, rect.bottom - rect.top - 4,
                          SWP_SHOWWINDOW);
-  mSizeBar->SetWindowPos(NULL, previewwidth + 4, 2,
+  mSizeBar->SetWindowPos(nullptr, previewwidth + 4, 2,
                                  buttonbarwidth, rect.bottom - rect.top - 4,
                                  SWP_SHOWWINDOW);
 

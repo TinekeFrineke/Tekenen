@@ -8,31 +8,31 @@
 class Button;
 class VariableBitmapButton;
 
-class FileControl : public FrameWindow
+class FileControl: public FrameWindow
 {
 public:
-                              FileControl(Window * aParent, HINSTANCE hInstance, bool bExistingOnly, const std::tstring & aName = _T("FileControl"));
+    FileControl(Window* aParent, HINSTANCE hInstance, bool bExistingOnly, const std::string& aName = "FileControl");
 
-  void                        SetFiles(const std::vector<std::tstring> & aFiles);
+    void                        SetFiles(const std::vector<std::string>& aFiles);
 
-  void                        ScrollUp();
-  void                        ScrollDown();
+    void                        ScrollUp();
+    void                        ScrollDown();
 
-  std::tstring                GetSelectedFile() const;
+    std::string                GetSelectedFile() const;
 
-  LRESULT                     WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
+    LRESULT                     WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 private:
-  void                        UpdateFiles();
+    void                        UpdateFiles();
 
-  LRESULT                     OnWindowPosChanged(const WINDOWPOS & oPos);
-  LRESULT                     OnButtonClicked(Button * aButton);
+    LRESULT                     OnWindowPosChanged(const WINDOWPOS& oPos);
+    LRESULT                     OnButtonClicked(Button* aButton);
 
-  bool                        mExistingOnly;
-  int                         mIndex;
-  std::vector<std::tstring>   mFiles;
-  std::vector<VariableBitmapButton *> mCells;
-  Button *                    mSelectedButton;
+    bool                        mExistingOnly;
+    int                         mIndex;
+    std::vector<std::string>   mFiles;
+    std::vector<VariableBitmapButton*> mCells;
+    Button* mSelectedButton;
 };
 
 

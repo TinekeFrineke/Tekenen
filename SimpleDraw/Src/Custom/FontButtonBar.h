@@ -21,7 +21,7 @@ public:
                                             LetterState & aState,
                                             int aRows, int aColumns);
 
-  void                        SetFontNames(const std::vector<std::tstring> & aFontNames);
+  void                        SetFontNames(const std::vector<std::string> & aFontNames);
 
   virtual void                ScrollLeft();
   virtual void                ScrollRight();
@@ -40,7 +40,7 @@ private:
 
   LetterState &               mState;
   
-  std::vector<std::tstring>   mFontNames;
+  std::vector<std::string>   mFontNames;
   int                         mCurrentIndex;
 
   FontButton *                mSelected;

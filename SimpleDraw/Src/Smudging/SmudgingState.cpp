@@ -89,7 +89,7 @@ LRESULT SmudgingState::ProcessLButtonDown(int anX, int anY)
 LRESULT SmudgingState::Smudge5(int anX, int anY)
 {
   //TCHAR smsg[1024];
-  //_stprintf(smsg, _T("### Smudge4: anX == %d anY == %d mLastPosition == %d, %d\n"), anX, anY, mLastPosition.x, mLastPosition.y);
+  //_stprintf(smsg, "### Smudge4: anX == %d anY == %d mLastPosition == %d, %d\n"), anX, anY, mLastPosition.x, mLastPosition.y);
   //OutputDebugString(smsg);
   Vector point(anX, anY);
   Vector direction(point - mLastPosition);
@@ -142,7 +142,7 @@ LRESULT SmudgingState::Smudge5(int anX, int anY)
     vIncrement  = -1/* * (dlength + 3 / 4)*/;
   }
 
-  //_stprintf(smsg, _T("###          hIncrement == %d vIncrement %d\n"), hIncrement, vIncrement);
+  //_stprintf(smsg, "###          hIncrement == %d vIncrement %d\n"), hIncrement, vIncrement);
   //OutputDebugString(smsg);
 
   for (int i = startx; bLeft ? i <= endx : i >= endx; i += hIncrement)
@@ -184,7 +184,7 @@ LRESULT SmudgingState::Smudge5(int anX, int anY)
   UpdateWindow(GetWindow().GetHwnd());
   // Determine the pixels that must be adapted:
 
-  //OutputDebugString(_T("### Smudge4 Done\n"));
+  //OutputDebugString("### Smudge4 Done\n"));
 
   return 0;
 }
@@ -587,7 +587,7 @@ LRESULT SmudgingState::Smudge(const Vector & aTarget, const Vector & aWith)
 LRESULT SmudgingState::Smudge4(int anX, int anY)
 {
   //TCHAR smsg[1024];
-  //_stprintf(smsg, _T("### Smudge4: anX == %d anY == %d mLastPosition == %d, %d\n"), anX, anY, mLastPosition.x, mLastPosition.y);
+  //_stprintf(smsg, "### Smudge4: anX == %d anY == %d mLastPosition == %d, %d\n"), anX, anY, mLastPosition.x, mLastPosition.y);
   //OutputDebugString(smsg);
   Vector point(anX, anY);
   Vector direction(point - mLastPosition);
@@ -640,7 +640,7 @@ LRESULT SmudgingState::Smudge4(int anX, int anY)
     vIncrement  = -1/* * (dlength + 3 / 4)*/;
   }
 
-  //_stprintf(smsg, _T("###          hIncrement == %d vIncrement %d\n"), hIncrement, vIncrement);
+  //_stprintf(smsg, "###          hIncrement == %d vIncrement %d\n"), hIncrement, vIncrement);
   //OutputDebugString(smsg);
 
   for (int i = startx; bLeft ? i <= endx : i >= endx; i += hIncrement)
@@ -682,7 +682,7 @@ LRESULT SmudgingState::Smudge4(int anX, int anY)
   UpdateWindow(GetWindow().GetHwnd());
   // Determine the pixels that must be adapted:
 
-  //OutputDebugString(_T("### Smudge4 Done\n"));
+  //OutputDebugString("### Smudge4 Done\n"));
 
   return 0;
 }
@@ -705,7 +705,7 @@ LRESULT SmudgingState::Smudge6(int anX, int anY)
   (void)bpp;
 
   //TCHAR smsg[1024];
-  //_stprintf(smsg, _T("### Smudge4: anX == %d anY == %d mLastPosition == %d, %d\n"), anX, anY, mLastPosition.x, mLastPosition.y);
+  //_stprintf(smsg, "### Smudge4: anX == %d anY == %d mLastPosition == %d, %d\n"), anX, anY, mLastPosition.x, mLastPosition.y);
   //OutputDebugString(smsg);
 
   Vector point(anX, anY);
@@ -758,7 +758,7 @@ LRESULT SmudgingState::Smudge6(int anX, int anY)
     vIncrement  = -1/* * * (dlength + 3 / 4)*/;
   }
 
-  //_stprintf(smsg, _T("###          hIncrement == %d vIncrement %d\n"), hIncrement, vIncrement);
+  //_stprintf(smsg, "###          hIncrement == %d vIncrement %d\n"), hIncrement, vIncrement);
   //OutputDebugString(smsg);
 
   for (int i = startx; bLeft ? i <= endx : i >= endx; i += hIncrement)
@@ -796,7 +796,7 @@ LRESULT SmudgingState::Smudge6(int anX, int anY)
         ////TCHAR smsg[1024];
         //if (i == startx && j == starty)
         //{
-        //  _stprintf(smsg, _T("### Smudge6: *in* red == %d green == %d blue == %d nrcols == %d *out* red == %d green == %d blue === %d\n"),
+        //  _stprintf(smsg, "### Smudge6: *in* red == %d green == %d blue == %d nrcols == %d *out* red == %d green == %d blue === %d\n"),
         //                  bitmapdata[i + j * bitmap.bmWidthBytes + 2],
         //                  bitmapdata[i + j * bitmap.bmWidthBytes + 1],
         //                  bitmapdata[i + j * bitmap.bmWidthBytes + 0],
@@ -828,7 +828,7 @@ LRESULT SmudgingState::Smudge6(int anX, int anY)
   UpdateWindow(GetWindow().GetHwnd());
   // Determine the pixels that must be adapted:
 
-  //OutputDebugString(_T("### Smudge4 Done\n"));
+  //OutputDebugString("### Smudge4 Done\n"));
 
   delete[] bitmapdata;
 
@@ -934,7 +934,7 @@ LRESULT SmudgingState::Smudge7(int anX, int anY)
   BitMap bitmap(hBitmap);
 
   //TCHAR smsg[1024];
-  //_stprintf(smsg, _T("### Smudge7: anX == %d anY == %d mLastPosition == %d, %d\n"), anX, anY, mLastPosition.x, mLastPosition.y);
+  //_stprintf(smsg, "### Smudge7: anX == %d anY == %d mLastPosition == %d, %d\n"), anX, anY, mLastPosition.x, mLastPosition.y);
   //OutputDebugString(smsg);
 
   Vector point(anX, anY);
@@ -982,7 +982,7 @@ LRESULT SmudgingState::Smudge7(int anX, int anY)
     vIncrement  = -1;
   }
 
-  //_stprintf(smsg, _T("###          hIncrement == %d vIncrement %d\n"), hIncrement, vIncrement);
+  //_stprintf(smsg, "###          hIncrement == %d vIncrement %d\n"), hIncrement, vIncrement);
   //OutputDebugString(smsg);
 
   for (int irow = starty; bUp ? irow <= endy : irow >= endy; irow += vIncrement)
@@ -1019,7 +1019,7 @@ LRESULT SmudgingState::Smudge7(int anX, int anY)
         ////TCHAR smsg[1024];
         //if (i == startx && j == starty)
         //{
-        //  _stprintf(smsg, _T("### Smudge6: *in* red == %d green == %d blue == %d nrcols == %d *out* red == %d green == %d blue === %d\n"),
+        //  _stprintf(smsg, "### Smudge6: *in* red == %d green == %d blue == %d nrcols == %d *out* red == %d green == %d blue === %d\n"),
         //                  bitmapdata[i + j * bitmap.bmWidthBytes + 2],
         //                  bitmapdata[i + j * bitmap.bmWidthBytes + 1],
         //                  bitmapdata[i + j * bitmap.bmWidthBytes + 0],
@@ -1052,7 +1052,7 @@ LRESULT SmudgingState::Smudge7(int anX, int anY)
 
   InvalidateRect(GetWindow().GetHwnd(), NULL/*&rect*/, false);
   UpdateWindow(GetWindow().GetHwnd());
-  //OutputDebugString(_T("### Smudge4 Done\n"));
+  //OutputDebugString("### Smudge4 Done\n"));
 
   return 0;
 }
@@ -1062,7 +1062,7 @@ LRESULT SmudgingState::Smudge8(int anX, int anY)
 {
   BitMap bitmap(GetWindow().GetBitmap());
   //TCHAR smsg[1024];
-  //_stprintf(smsg, _T("### Smudge4: anX == %d anY == %d mLastPosition == %d, %d\n"), anX, anY, mLastPosition.x, mLastPosition.y);
+  //_stprintf(smsg, "### Smudge4: anX == %d anY == %d mLastPosition == %d, %d\n"), anX, anY, mLastPosition.x, mLastPosition.y);
   //OutputDebugString(smsg);
   Vector point(anX, anY);
   Vector direction(point - mLastPosition);
@@ -1115,7 +1115,7 @@ LRESULT SmudgingState::Smudge8(int anX, int anY)
     vIncrement  = -1;
   }
 
-  //_stprintf(smsg, _T("###          hIncrement == %d vIncrement %d\n"), hIncrement, vIncrement);
+  //_stprintf(smsg, "###          hIncrement == %d vIncrement %d\n"), hIncrement, vIncrement);
   //OutputDebugString(smsg);
 
   for (int j = starty; bUp ? j <= endy : j >= endy; j += vIncrement)

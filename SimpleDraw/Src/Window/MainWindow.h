@@ -14,55 +14,55 @@ class GeneralToolMenu;
 class SpecialToolMenu;
 class UserButtonBar;
 
-class MainWindow : public MijnWindow<MainWindow>
+class MainWindow: public MijnWindow<MainWindow>
 {
 public:
-                          MainWindow(HINSTANCE    hInstance,
-                                     Controller & aController);
-                          ~MainWindow();
+    MainWindow(HINSTANCE    hInstance,
+               Controller& aController);
+    ~MainWindow();
 
-  LRESULT                 WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
+    LRESULT                 WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
 
-  static bool             RegisterClass(HINSTANCE hInstance);
+    static bool             RegisterClass(HINSTANCE hInstance);
 
-  DrawingWindow *         GetDrawingWindow()    { return mDrawingWindow; }
-  GeneralToolMenu *       GetGeneralToolMenu()  { return mGeneralToolMenu; }
-  SpecialToolMenu *       GetSpecialToolMenu()  { return mSpecialToolMenu; }
+    DrawingWindow* GetDrawingWindow() { return mDrawingWindow; }
+    GeneralToolMenu* GetGeneralToolMenu() { return mGeneralToolMenu; }
+    SpecialToolMenu* GetSpecialToolMenu() { return mSpecialToolMenu; }
 
-  void                    UpdateUser();
+    void                    UpdateUser();
 
 protected:
-  static TCHAR *          GetClassName() { return _T("MijnMainWindow"); }
+    static char* GetClassName() { return const_cast<char*>("MijnMainWindow"); }
 
 private:
-  MainWindow &            operator=(const MainWindow &);
-                          MainWindow(const MainWindow &);
+    MainWindow& operator=(const MainWindow&) = delete;
+    MainWindow(const MainWindow&) = delete;
 
-  bool                    HandleCreateWindow();
+    bool                    HandleCreateWindow();
 
-  bool                    HandleCharacter(UINT aCharacter, UINT aRepeatCount, UINT aFlags);
+    bool                    HandleCharacter(UINT aCharacter, UINT aRepeatCount, UINT aFlags);
 
-  bool                    HandleMoveWindow(UINT aLeft, UINT aTop);
-  LRESULT                 OnSizeWindow(UINT aWidth, UINT aHeight);
-  virtual LRESULT         OnWindowPosChanged(const WINDOWPOS & oPos);
-  LRESULT                 OnButtonClicked(Button * aButton);
+    bool                    HandleMoveWindow(UINT aLeft, UINT aTop);
+    LRESULT                 OnSizeWindow(UINT aWidth, UINT aHeight);
+    virtual LRESULT         OnWindowPosChanged(const WINDOWPOS& oPos);
+    LRESULT                 OnButtonClicked(Button* aButton);
 
-  Controller &            mController;
-  UserButtonBar *         mUserButtonBar;
-  ButtonBar *             mFileButtonBar;
-  DoubleBitmapButton *    mEraseButton;
-  DoubleBitmapButton *    mSaveButton;
-  DoubleBitmapButton *    mLoadButton;
-  DoubleBitmapButton *    mCloseButton;
+    Controller& mController;
+    UserButtonBar* mUserButtonBar;
+    ButtonBar* mFileButtonBar;
+    DoubleBitmapButton* mEraseButton;
+    DoubleBitmapButton* mSaveButton;
+    DoubleBitmapButton* mLoadButton;
+    DoubleBitmapButton* mCloseButton;
 
-  ButtonBar *             mUndoButtonBar;
+    ButtonBar* mUndoButtonBar;
 
-  DoubleBitmapButton *    mUndoButton;
-  DoubleBitmapButton *    mRedoButton;
+    DoubleBitmapButton* mUndoButton;
+    DoubleBitmapButton* mRedoButton;
 
-  DrawingWindow *         mDrawingWindow;
-  GeneralToolMenu *       mGeneralToolMenu;
-  SpecialToolMenu *       mSpecialToolMenu;
+    DrawingWindow* mDrawingWindow;
+    GeneralToolMenu* mGeneralToolMenu;
+    SpecialToolMenu* mSpecialToolMenu;
 };
 
 

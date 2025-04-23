@@ -47,37 +47,37 @@ void StampSizeState::OutputDebugState(DRAGGING_STATE aState)
   switch (aState)
   {
   case DS_None:
-    OutputDebugString(_T("state == DS_None\n"));
+    OutputDebugString("state == DS_None\n");
     break;
   case DS_Left:
-    OutputDebugString(_T("state == DS_None\n"));
+    OutputDebugString("state == DS_None\n");
     break;
   case DS_Right:
-    OutputDebugString(_T("state == DS_None\n"));
+    OutputDebugString("state == DS_None\n");
     break;
   case DS_Top:
-    OutputDebugString(_T("state == DS_None\n"));
+    OutputDebugString("state == DS_None\n");
     break;
   case DS_Bottom:
-    OutputDebugString(_T("state == DS_None\n"));
+    OutputDebugString("state == DS_None\n");
     break;
   case DS_LeftTop:
-    OutputDebugString(_T("state == DS_None\n"));
+    OutputDebugString("state == DS_None\n");
     break;
   case DS_RightTop:
-    OutputDebugString(_T("state == DS_None\n"));
+    OutputDebugString("state == DS_None\n");
     break;
   case DS_LeftBottom:
-    OutputDebugString(_T("state == DS_None\n"));
+    OutputDebugString("state == DS_None\n");
     break;
   case DS_RightBottom:
-    OutputDebugString(_T("state == DS_None\n"));
+    OutputDebugString("state == DS_None\n");
     break;
   case DS_Move:
-    OutputDebugString(_T("state == DS_None\n"));
+    OutputDebugString("state == DS_None\n");
     break;
   default:
-    OutputDebugString(_T("state == <Unknown>\n"));
+    OutputDebugString("state == <Unknown>\n");
   }
 }
 

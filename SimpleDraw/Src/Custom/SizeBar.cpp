@@ -1,20 +1,21 @@
 
 #include "SizeBar.h"
 
+#include "General/Profile.h"
 #include "Resource/resource.h"
 #include "Button/BitmapButton.h"
 
 
 SizeBarBase::SizeBarBase(Window * aParent, HINSTANCE anInstance)
-: ButtonBar     (aParent, anInstance, _T("SizeBarBase"), ButtonBar::LS_VerticalFixedSize),
-  mLargerButton (NULL),
-  mSmallerButton(NULL)
+: ButtonBar     (aParent, anInstance, "SizeBarBase", ButtonBar::LAYOUT_STRATEGY::VerticalFixedSize),
+  mLargerButton (nullptr),
+  mSmallerButton(nullptr)
 {
-  SingleBitmapButton * larger   = new SingleBitmapButton(this, anInstance, true, _T("SizeWindowLargerButton"));
-  SingleBitmapButton * smaller  = new SingleBitmapButton(this, anInstance, true, _T("SizeWindowSmallerButton"));
+  SingleBitmapButton * larger   = new SingleBitmapButton(this, anInstance, true, Profile::GetInstance().GetResourceDirectory() + "\\SizeWindowLargerButton");
+  SingleBitmapButton * smaller  = new SingleBitmapButton(this, anInstance, true, Profile::GetInstance().GetResourceDirectory() + "\\SizeWindowSmallerButton");
 
-  larger->SetBitmap(IDB_ARROW_UP);
-  smaller->SetBitmap(IDB_ARROW_DOWN);
+  larger->SetBitmap(Profile::GetInstance().GetResourceDirectory() + "\\ArrowUp.bmp");
+  smaller->SetBitmap(Profile::GetInstance().GetResourceDirectory() + "\\ArrowDown.bmp");
 
   mLargerButton   = larger;
   mSmallerButton  = smaller;

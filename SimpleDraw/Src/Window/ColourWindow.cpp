@@ -48,18 +48,18 @@ int nrrows = sizeof(lColours) / sizeof(lColours[0]);
 int nrcols = sizeof(lColours[0]) / sizeof(lColours[0][0]);
 
 ColourWindow::ColourWindow(Window * aParent, DrawingAttributes & anAttributes,
-                           HINSTANCE hInstance, const std::tstring & aName)
+                           HINSTANCE hInstance, const std::string & aName)
 : GenericWindow(aParent, hInstance, aName, WS_CHILD),
   mAttributes             (anAttributes),
   mPressedButton          (NULL)
 {
-  //Create(GetClassName(), _T("KleurenWindow"), WS_CHILD);
+  //Create(GetClassName(), "KleurenWindow"), WS_CHILD);
 
   for (int row = 0; row < nrrows; ++row)
     for (int column = 0; column < nrcols; ++column) {
       TCHAR name[64];
-      _stprintf(name, _T("ColourButton %02d"), column * nrrows + row);
-      ColourButton * button = new ColourButton(this, hInstance, name, Button::BS_ToggleButton);
+      sprintf(name, "ColourButton %02d", column * nrrows + row);
+      ColourButton * button = new ColourButton(this, hInstance, name, Button::BUTTON_STRATEGY::ToggleButton);
       RECT rect = { 0, 0, 1, 1 };
       button->Create(rect, lColours[row][column]);
       if (lColours[row][column] == anAttributes.mColour)

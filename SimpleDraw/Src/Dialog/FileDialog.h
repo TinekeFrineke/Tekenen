@@ -14,40 +14,40 @@ class FileControl;
 class UserButtonBar;
 
 
-class FileDialog : public Dialog
+class FileDialog: public Dialog
 {
 public:
-                              FileDialog(Window * aParent, HINSTANCE hInstance,
-                                         bool bExistingOnly);
-                              ~FileDialog();
+    FileDialog(Window* aParent, HINSTANCE hInstance,
+               bool bExistingOnly);
+    ~FileDialog();
 
-  void                        ShowModal();
+    void                        ShowModal();
 
-  std::tstring                GetFilename() const;
+    std::string                GetFilename() const;
 
 private:
-  void                        SelectUser(const std::tstring & aUser);
+    void                        SelectUser(const std::string& aUser);
 
-  LRESULT                     OnWindowPosChanged(const WINDOWPOS & aPos);
-  LRESULT                     OnButtonClicked(Button * aButton);
+    LRESULT                     OnWindowPosChanged(const WINDOWPOS& aPos);
+    LRESULT                     OnButtonClicked(Button* aButton);
 
-  virtual LRESULT             WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
+    virtual LRESULT             WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam);
 
-  void                        AddButton(int iResource, int iPressedResource, int iID);
+    void                        AddButton(int iResource, int iPressedResource, int iID);
 
-  // Index of first displayed item in mEntries array
-  int                         mFirstIndex;
-  std::vector<std::tstring>   mEntries;
-  // First image to show
-  std::tstring                mFileMask;
+    // Index of first displayed item in mEntries array
+    int                         mFirstIndex;
+    std::vector<std::string>   mEntries;
+    // First image to show
+    std::string                mFileMask;
 
-  UserButtonBar *             mButtonBar;
-  DoubleBitmapButton *        mOKButton;
-  DoubleBitmapButton *        mCloseButton;
+    UserButtonBar* mButtonBar;
+    DoubleBitmapButton* mOKButton;
+    DoubleBitmapButton* mCloseButton;
 
-  DoubleBitmapButton *        mButtonUp;
-  DoubleBitmapButton *        mButtonDown;
-  FileControl *               mFileControl;
+    DoubleBitmapButton* mButtonUp;
+    DoubleBitmapButton* mButtonDown;
+    FileControl* mFileControl;
 };
 
 

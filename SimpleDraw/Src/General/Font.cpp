@@ -4,99 +4,99 @@
 #include <assert.h>
 
 
-Font::Font(const std::tstring & aName, int aSize)
-: mName       (aName),
-  mSize       (aSize),
-  mFontHandle (0)
+Font::Font(const std::string& aName, int aSize)
+    : mName(aName),
+    mSize(aSize),
+    mFontHandle(0)
 {
 }
 
 
-Font::Font(const Font & aFont)
-: mFontHandle (NULL),
-  mName       (aFont.mName),
-  mSize       (aFont.mSize)
+Font::Font(const Font& aFont)
+    : mFontHandle(NULL),
+    mName(aFont.mName),
+    mSize(aFont.mSize)
 {
 }
 
 
-Font & Font::operator=(const Font & aFont)
+Font& Font::operator=(const Font& aFont)
 {
-  if (&aFont == this)
+    if (&aFont == this)
+        return *this;
+
+    if (mName == aFont.mName && mSize == aFont.mSize)
+        return *this;
+
+    if (mFontHandle != NULL)
+    {
+        DeleteObject(mFontHandle);
+        mFontHandle = NULL;
+    }
+
+    mName = aFont.mName;
+    mSize = aFont.mSize;
     return *this;
-
-  if (mName == aFont.mName && mSize == aFont.mSize)
-    return *this;
-
-  if (mFontHandle != NULL)
-  {
-    DeleteObject(mFontHandle);
-    mFontHandle = NULL;
-  }
-
-  mName = aFont.mName;
-  mSize = aFont.mSize;
-  return *this;
 }
 
 
 Font::~Font()
 {
-  if (mFontHandle != NULL)
-    DeleteObject(mFontHandle);
+    if (mFontHandle != NULL)
+        DeleteObject(mFontHandle);
 }
 
 
-void Font::SetName(const std::tstring & aName)
+void Font::SetName(const std::string& aName)
 {
-  if (mName == aName)
-    return;
+    if (mName == aName)
+        return;
 
-  if (mFontHandle != NULL)
-  {
-    DeleteObject(mFontHandle);
-    mFontHandle = NULL;
-  }
+    if (mFontHandle != NULL)
+    {
+        DeleteObject(mFontHandle);
+        mFontHandle = NULL;
+    }
 
-  mName = aName;
+    mName = aName;
 }
 
 
 void Font::SetSize(int aSize)
 {
-  if (mSize == aSize)
-    return;
+    if (mSize == aSize)
+        return;
 
-  if (mFontHandle != NULL)
-  {
-    DeleteObject(mFontHandle);
-    mFontHandle = NULL;
-  }
+    if (mFontHandle != NULL)
+    {
+        DeleteObject(mFontHandle);
+        mFontHandle = NULL;
+    }
 
-  mSize = aSize;
+    mSize = aSize;
 }
 
 
 HFONT Font::Create()
 {
-  if (mName.empty())
-    return NULL;
+    if (mName.empty())
+        return NULL;
 
-  LOGFONT logfont;
-  memset(&logfont, 0, sizeof(LOGFONT));
+    LOGFONT logfont;
+    memset(&logfont, 0, sizeof(LOGFONT));
 
-  assert(mName.length() < 32);
-  _tcscpy(logfont.lfFaceName, mName.c_str());
-  logfont.lfHeight = -mSize;
+    assert(mName.length() < 32);
+    strcpy(logfont.lfFaceName, mName.c_str());
+    logfont.lfHeight = -mSize;
 
-  return CreateFontIndirect(&logfont);
+    return CreateFontIndirect(&logfont);
 }
 
 
 HFONT Font::GetHandle()
 {
-  if (mFontHandle == NULL)
-    mFontHandle = Create();
+    if (mFontHandle == NULL)
+        mFontHandle = Create();
 
-  return mFontHandle;
+    return mFontHandle;
 }

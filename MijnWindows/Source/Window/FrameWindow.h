@@ -4,27 +4,24 @@
 #include "Window/Window.h"
 
 
-class FrameWindow : public MijnWindow<FrameWindow>
+class FrameWindow: public MijnWindow<FrameWindow>
 {
 public:
-                          FrameWindow(Window * aParent, HINSTANCE hInstance,
-                                      const std::tstring & aName,
-                                      DWORD aStyle = WS_CHILD | WS_BORDER/* | WS_VISIBLE*/);
-                          ~FrameWindow();
+    FrameWindow(Window* aParent, HINSTANCE hInstance,
+                const std::string& aName,
+                DWORD aStyle = WS_CHILD | WS_BORDER/* | WS_VISIBLE*/);
+    ~FrameWindow() override;
 
-  void                    SetColour(COLORREF aColour);
+    void                    SetColour(COLORREF aColour);
 
-  static bool             RegisterClass(HINSTANCE hInstance);
+    static bool             RegisterClass(HINSTANCE hInstance);
 
 protected:
-  static TCHAR *          GetClassName() { return const_cast<TCHAR *>(_T("MijnFrameWindow")); }
+    static char* GetClassName() { return const_cast<char*>("MijnFrameWindow"); }
 
 private:
-  /// handle paint request
-  LRESULT                 OnPaint();
-
- ///
-  COLORREF                mColour;
+    LRESULT  OnPaint();
+    COLORREF mColour;
 };
 
 

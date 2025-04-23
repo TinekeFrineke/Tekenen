@@ -2,7 +2,6 @@
 #include "DrawingWindow.h"
 
 #include <stdio.h>
-#include <tchar.h>
 
 #include "DrawingState/DrawingState.h"
 #include "Filling/FillState.h"
@@ -13,32 +12,25 @@
 #include "Airbrushing/AirbrushingState.h"
 #include "Resource/resource.h"
 
-#ifndef min
-#define min(a,b) ((a)<(b)?(a):(b))
-#endif
-#ifndef max
-#define max(a,b) ((a)>(b)?(a):(b))
-#endif
-
 
 template<>
 bool MijnWindow<DrawingWindow>::mRegistered = false;
 
 DrawingWindow::DrawingWindow(Window * aParent, SpecialToolMenu & aMenu,
                              DrawingAttributes & anAttributes,
-                             HINSTANCE hInstance, const std::tstring & aName)
+                             HINSTANCE hInstance, const std::string & aName)
 : MijnWindow<DrawingWindow> (aParent, hInstance, aName),
   mSpecialToolMenu          (aMenu),
   mAttributes               (anAttributes),
   mState                    (NULL),
-  mDrawingState             (Tekenen::DS_None),
+  mDrawingState             (Tekenen::DRAW_STATE::None),
   mHBitMap                  (NULL)
 {
-  Create(GetClassName(), _T("TekenWindow"), WS_CHILD);
+  Create(GetClassName(), "TekenWindow", WS_CHILD);
   mHScreenDC = GetDC(GetHwnd());
   mHMemoryDC = CreateCompatibleDC(mHScreenDC);
 
-  SetState(Tekenen::DS_FreeDraw);
+  SetState(Tekenen::DRAW_STATE::FreeDraw);
 #if PRINT_MESSAGES > 0
   SetDebug(true);
 #endif
@@ -68,26 +60,26 @@ void DrawingWindow::SetState(Tekenen::DRAW_STATE aState)
   DrawingState * pState = NULL;
   switch (aState)
   {
-  case Tekenen::DS_FreeDraw:
+  case Tekenen::DRAW_STATE::FreeDraw:
     pState = new FreeDrawingState(*this, GetInstance(), Controller::GetInstance(), mSpecialToolMenu, mAttributes);
     break;
 
-  case Tekenen::DS_Smudge:
+  case Tekenen::DRAW_STATE::Smudge:
     pState = new SmudgingState(*this, GetInstance(), Controller::GetInstance(), mSpecialToolMenu, mAttributes);
     break;
 
-  case Tekenen::DS_Stamp:
+  case Tekenen::DRAW_STATE::Stamp:
     pState = new StampState(*this, GetInstance(), Controller::GetInstance(), mSpecialToolMenu, mAttributes);
     break;
 
-  case Tekenen::DS_Letter:
+  case Tekenen::DRAW_STATE::Letter:
     pState = new LetterState(*this, GetInstance(), Controller::GetInstance(), mSpecialToolMenu, mAttributes);
     break;
 
-  case Tekenen::DS_Fill:
+  case Tekenen::DRAW_STATE::Fill:
     pState = new FillState(*this, GetInstance(), Controller::GetInstance(), mSpecialToolMenu, mAttributes);
     break;
-  case Tekenen::DS_Airbrush:
+  case Tekenen::DRAW_STATE::Airbrush:
     pState = new AirbrushingState(*this, GetInstance(), Controller::GetInstance(), mSpecialToolMenu, mAttributes);
     break;
   }
@@ -213,7 +205,7 @@ void DrawingWindow::SetBitmap(HBITMAP hBitmap)
   float hscale = float(dstwidth) / srcwidth;
   float vscale = float(dstheight) / srcheight;
 
-  float scale = min(hscale, vscale);
+  float scale = std::min(hscale, vscale);
 
   int hormargin = int((dstwidth - srcwidth * scale) / 2);
   int vermargin = int((dstheight - srcheight * scale) / 2);

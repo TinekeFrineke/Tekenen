@@ -6,7 +6,7 @@
 #include "Button/BitmapButton.h"
 
 
-FileControl::FileControl(Window * aParent, HINSTANCE hInstance, bool bExistingOnly, const std::tstring & aName)
+FileControl::FileControl(Window * aParent, HINSTANCE hInstance, bool bExistingOnly, const std::string & aName)
 : FrameWindow     (aParent, hInstance, aName),
   mExistingOnly   (bExistingOnly),
   mSelectedButton (NULL),
@@ -15,15 +15,15 @@ FileControl::FileControl(Window * aParent, HINSTANCE hInstance, bool bExistingOn
   for (int i = 0; i < 9; ++i)
   {
     VariableBitmapButton * button = new VariableBitmapButton(this, hInstance,
-                                                             false, _T("FileControlButton"),
-                                                             Button::BS_ToggleButton);
+                                                             false, "FileControlButton",
+                                                             Button::BUTTON_STRATEGY::ToggleButton);
     button->SetSelectedColour(RGB(255, 127, 0));
     mCells.push_back(button);
   }
 }
 
 
-void FileControl::SetFiles(const std::vector<std::tstring> & aFiles)
+void FileControl::SetFiles(const std::vector<std::string> & aFiles)
 {
   mFiles = aFiles;
   mIndex = 0;
@@ -39,7 +39,7 @@ void FileControl::UpdateFiles()
     if (i + mIndex < mFiles.size())
       mCells[i]->SetBitmap(mFiles[i + mIndex]);
     else
-      mCells[i]->SetBitmap(_T(""));
+      mCells[i]->SetBitmap("");
     InvalidateRect(mCells[i]->GetHwnd(), NULL, true);
   }
 }
@@ -111,13 +111,13 @@ LRESULT FileControl::WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam)
 }
 
 
-std::tstring FileControl::GetSelectedFile() const
+std::string FileControl::GetSelectedFile() const
 {
   for (int i = 0; i < 9; ++i)
     if (mCells[i] == mSelectedButton)
       return mFiles[mIndex + i];
 
-  return _T("");
+  return "";
 }
 
 

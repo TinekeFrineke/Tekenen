@@ -15,7 +15,7 @@ class Preview : public FrameWindow
 {
 public:
                       Preview(Window *aWindow, HINSTANCE anInstance,
-                              const std::tstring & aName = _T("Preview"),
+                              const std::string & aName = "Preview",
                               DWORD dwStyle = WS_CHILD | WS_BORDER)
                       : FrameWindow(aWindow, anInstance, aName, dwStyle) {}
 

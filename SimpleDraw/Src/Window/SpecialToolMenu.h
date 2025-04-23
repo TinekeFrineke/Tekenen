@@ -8,51 +8,51 @@ class DrawingAttributes;
 class SpecialToolMenu;
 
 
-class SubMenu : public virtual Subject
+class SubMenu: public virtual Subject
 {
 public:
-                          SubMenu(SpecialToolMenu & aMenu, DrawingAttributes &  anAttributes);
-  virtual                 ~SubMenu(){}
+    SubMenu(SpecialToolMenu& aMenu, DrawingAttributes& anAttributes);
+    virtual                 ~SubMenu() {}
 
-  virtual LRESULT         LayoutWindow(const RECT & aClientRect) = 0;
+    virtual LRESULT         LayoutWindow(const RECT& aClientRect) = 0;
 
 protected:
-  SpecialToolMenu &       GetMenu() { return mWindow; }
-  const SpecialToolMenu & GetMenu() const { return mWindow; }
+    SpecialToolMenu& GetMenu() { return mWindow; }
+    const SpecialToolMenu& GetMenu() const { return mWindow; }
 
-  DrawingAttributes &     GetAttributes() { return mAttributes; }
-  const DrawingAttributes &
-                          GetAttributes() const { return mAttributes; }
+    DrawingAttributes& GetAttributes() { return mAttributes; }
+    const DrawingAttributes&
+        GetAttributes() const { return mAttributes; }
 
 private:
-  // Prohibit assignment
-  SubMenu &               operator=(const SubMenu &);
-  // Prohibit copying
-                          SubMenu(const SubMenu &);
+    // Prohibit assignment
+    SubMenu& operator=(const SubMenu&);
+    // Prohibit copying
+    SubMenu(const SubMenu&);
 
-  SpecialToolMenu &       mWindow;
-  DrawingAttributes &     mAttributes;
+    SpecialToolMenu& mWindow;
+    DrawingAttributes& mAttributes;
 };
 
 
-class SpecialToolMenu : public FrameWindow
+class SpecialToolMenu: public FrameWindow
 {
 public:
-                          SpecialToolMenu(Window * aParent, DrawingAttributes & anAttributes,
-                                          HINSTANCE hInstance, const std::tstring & aName = _T("SpecialToolMenu"));
-                          ~SpecialToolMenu();
+    SpecialToolMenu(Window* aParent, DrawingAttributes& anAttributes,
+                    HINSTANCE hInstance, const std::string& aName = "SpecialToolMenu");
+    ~SpecialToolMenu();
 
-  void                    SetSubMenu(SubMenu * aSuMenu);
+    void                    SetSubMenu(SubMenu* aSuMenu);
 
 protected:
-  friend class            SubMenu;
+    friend class            SubMenu;
 
 private:
-  LRESULT                 OnWindowPosChanged(const WINDOWPOS & aPos);
+    LRESULT                 OnWindowPosChanged(const WINDOWPOS& aPos);
 
-  SpecialToolMenu &       operator=(const SpecialToolMenu &) = delete;
-                          SpecialToolMenu(const SpecialToolMenu &) = delete;
+    SpecialToolMenu& operator=(const SpecialToolMenu&) = delete;
+    SpecialToolMenu(const SpecialToolMenu&) = delete;
 
-  SubMenu *               mSubMenu;
-  DrawingAttributes &     mAttributes;
+    SubMenu* mSubMenu;
+    DrawingAttributes& mAttributes;
 };

@@ -15,7 +15,7 @@
 
 LetterPreview::LetterPreview(Window * aParent, HINSTANCE anInstance,
                              Font & aFont, const DrawingAttributes & anAttributes)
-: Preview     (aParent, anInstance, _T("LetterPreview")),
+: Preview     (aParent, anInstance, "LetterPreview"),
   mFont       (aFont),
   mAttributes (anAttributes)
 {
@@ -61,7 +61,7 @@ LRESULT LetterPreview::OnPaint()
   HGDIOBJ oldfont = hFont ? SelectObject(dc, mFont.GetHandle()) : 0;
 
   RECT rect = { 0, 0, -1, -1 };
-  DrawText(dc, _T("ABCDE"), -1, &rect, DT_CALCRECT | DT_SINGLELINE);
+  DrawText(dc, "ABCDE", -1, &rect, DT_CALCRECT | DT_SINGLELINE);
 
   int hmargin = (cwidth - rect.right + rect.left) / 2;
   int vmargin = (cheight - rect.bottom + rect.top) / 2;
@@ -73,7 +73,7 @@ LRESULT LetterPreview::OnPaint()
 
   SetBkMode(dc, TRANSPARENT);
   COLORREF oldcolour = SetTextColor(dc, mAttributes.mColour);
-  DrawText(dc, _T("ABCDE"), -1, &rect, DT_SINGLELINE);
+  DrawText(dc, "ABCDE", -1, &rect, DT_SINGLELINE);
   SetTextColor(dc, oldcolour);
 
   if (hFont)

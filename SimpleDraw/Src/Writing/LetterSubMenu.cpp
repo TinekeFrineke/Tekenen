@@ -17,7 +17,7 @@ LetterSubMenu::LetterSubMenu(SpecialToolMenu & aMenu, LetterState & aState,
   mState      (aState),
   mInstance   (hInstance),
   mButtonBar  (new FontButtonBar(&aMenu, hInstance, aState, 2, 5)),
-  mFont       (_T("Arial New"), 16),
+  mFont       ("Arial New", 16),
   mSizeWindow (new SizeWindow(&aMenu, hInstance)),
   mPreview    (NULL)
 {
@@ -49,7 +49,7 @@ LetterSubMenu::~LetterSubMenu()
 
 void LetterSubMenu::FillFonts()
 {
-  std::vector<std::tstring> fontnames;
+  std::vector<std::string> fontnames;
 
   Profile::GetInstance().GetFontNames(fontnames);
 

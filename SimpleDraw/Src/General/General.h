@@ -7,20 +7,20 @@
 
 namespace Tekenen
 {
-  enum ORIENTATION { OR_Horizontal, OR_Vertical };
+  enum class ORIENTATION { Horizontal, Vertical };
 
-  enum DRAW_STATE
+  enum class DRAW_STATE
   {
-    DS_None,
-    DS_FreeDraw,
-    DS_Smudge,
-    DS_Stamp,
-    DS_Letter,
-    DS_Fill,
-    DS_Airbrush
+    None,
+    FreeDraw,
+    Smudge,
+    Stamp,
+    Letter,
+    Fill,
+    Airbrush
   };
 
-  void Randomize(std::vector<std::tstring> & aStrings);
+  void Randomize(std::vector<std::string> & aStrings);
 }
 
 
