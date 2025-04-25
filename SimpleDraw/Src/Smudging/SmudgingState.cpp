@@ -3,19 +3,12 @@
 
 #include <windef.h>
 
+#include "General/Profile.h"
 #include "Resource/resource.h"
 
 #include "SmudgingSubMenu.h"
 #include "Window/SpecialToolMenu.h"
 #include "Window/DrawingWindow.h"
-
-#ifndef max
-#define max(a,b) ((a)>(b)?(a):(b))
-#endif
-#ifndef min
-#define min(a,b) ((a)<(b)?(a):(b))
-#endif
-
 class SubToolMenu;
 
 
@@ -24,7 +17,7 @@ SmudgingState::SmudgingState(DrawingWindow &      aWindow,
                              Controller &         aController,
                              SpecialToolMenu &    aMenu,
                              DrawingAttributes &  anAttributes)
-: DrawingStateWithCursor(aWindow, anInstance, aController, anAttributes, IDC_POTLOOD),
+: DrawingStateWithCursor(aWindow, anInstance, aController, anAttributes, Profile::GetInstance().GetResourceDirectory() + "\\Smudge.cur"),
   mDrawing              (false)
 {
   aMenu.SetSubMenu(new SmudgingSubMenu(aMenu, *this, anInstance, anAttributes));
@@ -267,10 +260,10 @@ void SmudgingState::Circle(int anX, int anY)
                  anX + (GetAttributes().mThickness / 2),
                  anY + (GetAttributes().mThickness / 2) };
 
-  irect.left   = max(rect.left, irect.left - GetAttributes().mThickness);
-  irect.top    = max(rect.top, irect.top - GetAttributes().mThickness);
-  irect.right  = min(rect.right, irect.right + GetAttributes().mThickness);
-  irect.bottom = min(rect.bottom, irect.bottom + GetAttributes().mThickness);
+  irect.left   = std::max(rect.left, irect.left - GetAttributes().mThickness);
+  irect.top    = std::max(rect.top, irect.top - GetAttributes().mThickness);
+  irect.right  = std::min(rect.right, irect.right + GetAttributes().mThickness);
+  irect.bottom = std::min(rect.bottom, irect.bottom + GetAttributes().mThickness);
 
   InvalidateRect(GetWindow().GetHwnd(), &irect, false);
 }
@@ -734,21 +727,21 @@ LRESULT SmudgingState::Smudge6(int anX, int anY)
 
   if (bLeft)
   {
-    startx      = max(0, (point.GetX() - halfwidth) * bpp);
-    endx        = min(bitmap.bmWidth - 1, point.GetX() + halfwidth) * bpp;
+    startx      = std::max(0, (point.GetX() - halfwidth) * bpp);
+    endx        = std::min(bitmap.bmWidth - 1, LONG(point.GetX() + halfwidth)) * bpp;
     hIncrement  = 1 * bpp/* * (dlength + 3 / 4)*/;
   }
   else
   {
-    startx      = min(bitmap.bmWidth - 1, point.GetX() + halfwidth) * bpp;
-    endx        = max(0, (point.GetX() - halfwidth) * bpp);
+    startx      = std::min(bitmap.bmWidth - 1, LONG(point.GetX() + halfwidth)) * bpp;
+    endx        = std::max(0, (point.GetX() - halfwidth) * bpp);
     hIncrement  = -1 * bpp/* * (dlength + 3 / 4)*/;
   }
 
   if (bUp)
   {
-    starty      = max(0, point.GetY() - halfwidth);
-    endy        = min(bitmap.bmHeight, point.GetY() + halfwidth);
+    starty      = std::max(0, point.GetY() - halfwidth);
+    endy        = std::min(bitmap.bmHeight, LONG(point.GetY() + halfwidth));
     vIncrement  = 1/* * (dlength + 3 / 4)*/;
   }
   else
@@ -958,27 +951,27 @@ LRESULT SmudgingState::Smudge7(int anX, int anY)
 
   if (bLeft)
   {
-    startx      = max(0, (point.GetX() - halfwidth));
-    endx        = min(bitmap.GetWidth() - 1, point.GetX() + halfwidth);
+    startx      = std::max(0, (point.GetX() - halfwidth));
+    endx        = std::min(bitmap.GetWidth() - 1, point.GetX() + halfwidth);
     hIncrement  = 1;
   }
   else
   {
-    startx      = min(bitmap.GetWidth() - 1, point.GetX() + halfwidth);
-    endx        = max(0, (point.GetX() - halfwidth));
+    startx      = std::min(bitmap.GetWidth() - 1, point.GetX() + halfwidth);
+    endx        = std::max(0, (point.GetX() - halfwidth));
     hIncrement  = -1;
   }
 
   if (bUp)
   {
-    starty      = max(0, point.GetY() - halfwidth);
-    endy        = min(bitmap.GetHeight(), point.GetY() + halfwidth);
+    starty      = std::max(0, point.GetY() - halfwidth);
+    endy        = std::min(bitmap.GetHeight(), point.GetY() + halfwidth);
     vIncrement  = 1;
   }
   else
   {
-    starty      = min(bitmap.GetHeight(), point.GetY() + halfwidth);
-    endy        = max(0, point.GetY() - halfwidth);
+    starty      = std::min(bitmap.GetHeight(), point.GetY() + halfwidth);
+    endy        = std::max(0, point.GetY() - halfwidth);
     vIncrement  = -1;
   }
 

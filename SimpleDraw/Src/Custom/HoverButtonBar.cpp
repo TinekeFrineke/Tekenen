@@ -7,15 +7,8 @@
 #include "Button/HoverButton.h"
 #include "Button/BitmapButton.h"
 #include "Control/ButtonBar.h"
+#include "General/Profile.h"
 #include "Stamping/StampState.h"
-
-#ifndef min
-#define min(a,b) ((a)<(b)?(a):(b))
-#endif
-#ifndef max
-#define max(a,b) ((a)>(b)?(a):(b))
-#endif
-
 
 
 HoverButtonBar::HoverButtonBar(Window* aParent, HINSTANCE hInstance,
@@ -31,8 +24,8 @@ HoverButtonBar::HoverButtonBar(Window* aParent, HINSTANCE hInstance,
     mBack = new SingleBitmapButton(this, hInstance, true, "BackButton");
     mForward = new SingleBitmapButton(this, hInstance, true, "ForwardButton");
 
-    mBack->SetBitmap("arrowleft.bmp");
-    mForward->SetBitmap("arrowright.bmp");
+    mBack->SetBitmap(Profile::GetInstance().GetResourceDirectory() + "\\arrowleft.bmp");
+    mForward->SetBitmap(Profile::GetInstance().GetResourceDirectory() + "\\arrowright.bmp");
 
     for (int row = 0; row < aRows; ++row)
     {
@@ -64,8 +57,8 @@ void HoverButtonBar::FillButtons()
 
 void HoverButtonBar::ScrollForward()
 {
-    mCurrentIndex = min(mCurrentIndex + mRows * mColumns, int(mFiles.size()) - mRows * mColumns);
-    mCurrentIndex = max(mCurrentIndex, 0);
+    mCurrentIndex = std::min(mCurrentIndex + mRows * mColumns, int(mFiles.size()) - mRows * mColumns);
+    mCurrentIndex = std::max(mCurrentIndex, 0);
 
     FillButtons();
 }
@@ -74,7 +67,7 @@ void HoverButtonBar::ScrollForward()
 void HoverButtonBar::ScrollBack()
 {
     mCurrentIndex -= mRows * mColumns;
-    mCurrentIndex = max(mCurrentIndex, 0);
+    mCurrentIndex = std::max(mCurrentIndex, 0);
 
     FillButtons();
 }

@@ -1,5 +1,6 @@
 #include "FillState.h"
 
+#include "General/Profile.h"
 #include "Resource/resource.h"
 #include "FillSubMenu.h"
 #include "Window/SpecialToolMenu.h"
@@ -13,7 +14,7 @@ FillState::FillState(DrawingWindow &      aWindow,
                      Controller &         aController,
                      SpecialToolMenu &    aMenu,
                      DrawingAttributes &  anAttributes)
-: DrawingStateWithCursor(aWindow, anInstance, aController, anAttributes, IDC_EMMER),
+: DrawingStateWithCursor(aWindow, anInstance, aController, anAttributes, Profile::GetInstance().GetResourceDirectory() + "\\emmer.cur"),
   mBrush                (NULL)
 {
   LOGBRUSH logbrush;

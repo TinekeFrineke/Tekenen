@@ -2,6 +2,7 @@
 #include "Resource/resource.h"
 
 #include "AirbrushingSubMenu.h"
+#include "General/Profile.h"
 #include "Window/SpecialToolMenu.h"
 #include "Window/DrawingWindow.h"
 
@@ -30,7 +31,7 @@ AirbrushingState::AirbrushingState(DrawingWindow &      aWindow,
                                    Controller &         aController,
                                    SpecialToolMenu &    aMenu,
                                    DrawingAttributes &  anAttributes)
-: DrawingStateWithCursor(aWindow, anInstance, aController, anAttributes, IDC_POTLOOD),
+: DrawingStateWithCursor(aWindow, anInstance, aController, anAttributes, Profile::GetInstance().GetResourceDirectory() + "\\potlood.cur"),
   mDrawing              (false)
 {
   aMenu.SetSubMenu(new AirbrushingSubMenu(aMenu, *this, anInstance, anAttributes));

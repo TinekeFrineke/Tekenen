@@ -33,15 +33,29 @@ void DrawingState::FlushRedo()
 }
 
 
+namespace {
+HCURSOR MyLoadCursor(HINSTANCE hInstance, const std::string& fileName) {
+    return (HCURSOR)LoadImage(hInstance, fileName.c_str(), IMAGE_CURSOR,
+                                         0, 0,
+                                         LR_LOADFROMFILE);
+}
+}
+
 DrawingStateWithCursor::DrawingStateWithCursor(DrawingWindow &    aWindow,
                                                HINSTANCE          anInstance,
                                                Controller &       aController,
                                                DrawingAttributes &anAttributes,
-                                               int                aCursor)
+                                               const std::string& aCursor)
 : DrawingState(aWindow, anInstance, aController, anAttributes),
-  mCursor     (LoadCursor(anInstance, MAKEINTRESOURCE(aCursor))),
+  mCursor     (MyLoadCursor(anInstance, aCursor)),
   mOldCursor  (NULL)
 {
+    if (mCursor == 0) {
+
+    }
+    else {
+
+    }
 }
 
 

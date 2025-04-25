@@ -152,6 +152,7 @@
     <None Include="Src\Resource\emmer.cur" />
     <None Include="Src\Resource\potlood.cur" />
     <None Include="Src\Resource\potlood2.cur" />
+    <None Include="Src\Resource\Smudge.cur" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Src\Resource\fonts.txt" />

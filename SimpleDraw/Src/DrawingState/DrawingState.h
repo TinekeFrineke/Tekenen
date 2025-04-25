@@ -51,8 +51,8 @@ public:
                         DrawingStateWithCursor(DrawingWindow &    aWindow,
                                                HINSTANCE          anInstance,
                                                Controller &       aController,
-                                               DrawingAttributes &anAttributes,
-                                               int                iCursor);
+                                               DrawingAttributes& anAttributes,
+                                               const std::string& iCursor);
   virtual               ~DrawingStateWithCursor();
 
   virtual LRESULT       ProcessMessage(UINT uMsg, WPARAM wParam, LPARAM lParam) = 0;

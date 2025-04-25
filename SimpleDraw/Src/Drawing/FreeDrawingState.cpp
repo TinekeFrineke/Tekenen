@@ -2,6 +2,7 @@
 #include "Resource/resource.h"
 
 #include "DrawingSubMenu.h"
+#include "General/Profile.h"
 #include "Window/SpecialToolMenu.h"
 #include "Window/DrawingWindow.h"
 
@@ -20,7 +21,7 @@ FreeDrawingState::FreeDrawingState(DrawingWindow &      aWindow,
                                    Controller &         aController,
                                    SpecialToolMenu &    aMenu,
                                    DrawingAttributes &  anAttributes)
-: DrawingStateWithCursor(aWindow, anInstance, aController, anAttributes, IDC_POTLOOD),
+: DrawingStateWithCursor(aWindow, anInstance, aController, anAttributes, Profile::GetInstance().GetResourceDirectory() + "\\potlood.cur"),
   mDrawing              (false),
   mHPen                 (CreatePen(PS_SOLID, anAttributes.mThickness, anAttributes.mColour))
 {

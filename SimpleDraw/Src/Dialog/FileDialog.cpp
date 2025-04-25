@@ -36,7 +36,7 @@ FileDialog::FileDialog(Window* aParent, HINSTANCE hInstance,
     mButtonUp = new DoubleBitmapButton(this, hInstance, true, Profile::GetInstance().GetResourceDirectory() + "\\ButtonUp");
     mButtonDown = new DoubleBitmapButton(this, hInstance, true, Profile::GetInstance().GetResourceDirectory() + "\\ButtonDown");
     mButtonUp->SetBitmap(Profile::GetInstance().GetResourceDirectory() + "\\ArrowUp.bmp", Profile::GetInstance().GetResourceDirectory() + "\\ArrowUp.bmp");
-    mButtonDown->SetBitmap("ArrowDown.bmp", "ArrowDown.bmp");
+    mButtonDown->SetBitmap(Profile::GetInstance().GetResourceDirectory() + "\\ArrowDown.bmp", Profile::GetInstance().GetResourceDirectory() + "\\ArrowDown.bmp");
 
     mOKButton = new DoubleBitmapButton(this, hInstance, true, "ButtonOK");
     mOKButton->SetBitmap(Profile::GetInstance().GetResourceDirectory() + "\\Load.bmp", Profile::GetInstance().GetResourceDirectory() + "\\LoadPressed.bmp");
